@@ -1,0 +1,1360 @@
+<!DOCTYPE html>
+<html lang="ur" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hamare Bare Mein - YourBrand</title>
+   <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Google Fonts (Poppins) -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+   <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Montserrat:wght@700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.7;
+            color: #333;
+            background-color: #f8f9fa;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 25px;
+        }
+
+        .section-padding {
+            padding: 100px 0;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .heading-primary {
+            font-size: 4.2rem;
+            font-weight: 900;
+            color: #3f51b5;
+            margin-bottom: 30px;
+            line-height: 1.1;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.15);
+        }
+
+        .heading-secondary {
+            font-size: 3.2rem;
+            font-weight: 800;
+            color: #333;
+            margin-bottom: 40px;
+            position: relative;
+            padding-bottom: 20px;
+        }
+
+        .heading-secondary::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 6px;
+            background-color: #ff4081;
+            border-radius: 3px;
+        }
+
+        .paragraph-large {
+            font-size: 1.4rem;
+            color: #666;
+            line-height: 1.9;
+            max-width: 900px;
+            margin: 0 auto 60px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 18px 40px;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            text-decoration: none;
+            transition: 0.5s ease-in-out;
+            border: none;
+            cursor: pointer;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #3f51b5, #283593);
+            color: #ffffff;
+            box-shadow: 0 10px 25px rgba(63, 81, 181, 0.4);
+        }
+
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #283593, #3f51b5);
+            transform: translateY(-7px);
+            box-shadow: 0 18px 40px rgba(63, 81, 181, 0.6);
+        }
+
+        .btn-secondary {
+            background: linear-gradient(135deg, #ff4081, #d81b60);
+            color: #ffffff;
+            box-shadow: 0 10px 25px rgba(255, 64, 129, 0.4);
+        }
+
+        .btn-secondary:hover {
+            background: linear-gradient(135deg, #d81b60, #ff4081);
+            transform: translateY(-7px);
+            box-shadow: 0 18px 40px rgba(255, 64, 129, 0.6);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('https://placehold.co/1920x800/3f51b5/ffffff?text=Company+Team+Working') no-repeat center center;
+            background-size: cover;
+            background-attachment: fixed;
+            color: #ffffff;
+            text-align: center;
+            padding: 180px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 700px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            max-width: 1000px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-content p {
+            font-size: 1.6rem;
+            margin-bottom: 60px;
+            font-weight: 300;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .our-story-section {
+            background-color: #ffffff;
+        }
+
+        .story-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 80px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .story-text {
+            flex: 1;
+            min-width: 350px;
+            max-width: 700px;
+        }
+
+        .story-text h3 {
+            font-size: 2.5rem;
+            color: #3f51b5;
+            margin-bottom: 30px;
+            font-weight: 800;
+        }
+
+        .story-text p {
+            margin-bottom: 25px;
+            color: #666;
+            font-size: 1.15rem;
+        }
+
+        .story-image {
+            flex: 1;
+            min-width: 350px;
+            max-width: 600px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+            transform: rotateZ(-5deg);
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .story-image:hover {
+            transform: rotateZ(0deg) scale(1.05);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.25);
+        }
+
+        .mission-vision-section {
+            background-color: #2c3e50;
+            color: #ffffff;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mission-vision-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 60px;
+        }
+
+        .mission-card,
+        .vision-card {
+            background-color: rgba(255, 255, 255, 0.12);
+            padding: 50px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+            transition: transform 0.5s ease-in-out, background-color 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .mission-card:hover {
+            transform: translateY(-20px);
+            background-color: rgba(255, 255, 255, 0.25);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
+        }
+
+        .mission-card i,
+        .vision-card i {
+            font-size: 4rem;
+            color: #ff4081;
+            margin-bottom: 30px;
+        }
+
+        .mission-card h3,
+        .vision-card h3 {
+            font-size: 2.2rem;
+            margin-bottom: 25px;
+            font-weight: 800;
+            color: #ffffff;
+        }
+
+        .mission-card p,
+        .vision-card p {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .our-values-section {
+            background-color: #f8f9fa;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+        }
+
+        .value-card {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            text-align: center;
+            transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+            border-top: 6px solid #3f51b5;
+        }
+
+        .value-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.15);
+            border-top-color: #ff4081;
+        }
+
+        .value-card i {
+            font-size: 3.2rem;
+            color: #3f51b5;
+            margin-bottom: 25px;
+        }
+
+        .value-card h4 {
+            font-size: 1.8rem;
+            color: #333;
+            /* Assuming a dark color for headings */
+            margin-bottom: 18px;
+            font-weight: 800;
+        }
+
+        .value-card p {
+            font-size: 1.05rem;
+            color: #666;
+        }
+
+        .milestones-section {
+            background-color: #2c3e50;
+            color: #ffffff;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .milestones-timeline {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 0;
+        }
+
+        .milestones-timeline::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background-color: rgba(255, 255, 255, 0.3);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+        }
+
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .timeline-item.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            right: -12.5px;
+            background-color: #ff4081;
+            border: 4px solid #ffffff;
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .timeline-item-left {
+            left: 0;
+        }
+
+        .timeline-item-right {
+            left: 50%;
+        }
+
+        .timeline-item-right::after {
+            left: -12.5px;
+        }
+
+        .timeline-content {
+            padding: 25px 30px;
+            background-color: rgba(255, 255, 255, 0.15);
+            position: relative;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(5px);
+        }
+
+        .timeline-content h4 {
+            font-size: 1.6rem;
+            margin-bottom: 10px;
+            color: #ffffff;
+            font-weight: 700;
+        }
+
+        .timeline-content p {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        .timeline-date {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #ff4081;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .our-team-section {
+            background-color: #ffffff;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            justify-content: center;
+        }
+
+        .team-member-card {
+            background-color: #f8f9fa;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            text-align: center;
+            padding: 35px;
+            transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+            border: 1px solid #e0e0e0;
+        }
+
+        .team-member-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+        }
+
+        .team-member-card img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 30px;
+            border: 6px solid #3f51b5;
+            box-shadow: 0 0 0 8px rgba(63, 81, 181, 0.25);
+        }
+
+        .team-member-card h4 {
+            font-size: 1.8rem;
+            color: #333;
+            margin-bottom: 10px;
+            font-weight: 800;
+        }
+
+        .team-member-card p {
+            color: #666;
+            font-size: 1.05rem;
+            margin-bottom: 25px;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .social-links a {
+            color: #3f51b5;
+            font-size: 1.5rem;
+            transition: color 0.5s ease-in-out, transform 0.5s ease-in-out;
+        }
+
+        .social-links a:hover {
+            color: #ff4081;
+            transform: scale(1.3);
+        }
+
+        .testimonials-section {
+            background-color: #f8f9fa;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .testimonial-carousel {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            gap: 30px;
+            padding-bottom: 20px;
+        }
+
+        .testimonial-card {
+            flex: 0 0 100%;
+            max-width: 600px;
+            scroll-snap-align: center;
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            text-align: center;
+            transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+            margin: 0 auto;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .testimonial-card .quote-icon {
+            font-size: 3rem;
+            color: #3f51b5;
+            margin-bottom: 20px;
+        }
+
+        .testimonial-card p {
+            font-size: 1.1rem;
+            font-style: italic;
+            color: #666;
+            margin-bottom: 25px;
+            line-height: 1.8;
+        }
+
+        .testimonial-card .customer-info img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 10px;
+            border: 3px solid #ff4081;
+        }
+
+        .testimonial-card .customer-info h5 {
+            font-size: 1.2rem;
+            color: #333;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .testimonial-card .customer-info span {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        @media (max-width: 992px) {
+            .heading-primary {
+                font-size: 3.5rem;
+            }
+
+            .heading-secondary {
+                font-size: 2.5rem;
+            }
+
+            .paragraph-large {
+                font-size: 1.2rem;
+                margin-bottom: 40px;
+            }
+
+            .hero-section {
+                padding: 150px 20px;
+                min-height: 600px;
+            }
+
+            .hero-content p {
+                font-size: 1.3rem;
+                margin-bottom: 40px;
+            }
+
+            .story-content {
+                gap: 50px;
+            }
+
+            .story-text h3 {
+                font-size: 2.2rem;
+            }
+
+            .story-text p {
+                font-size: 1.05rem;
+            }
+
+            .mission-card,
+            .vision-card,
+            .value-card {
+                padding: 35px;
+            }
+
+            .mission-card h3,
+            .vision-card h3 {
+                font-size: 1.8rem;
+            }
+
+            .mission-card p,
+            .vision-card p {
+                font-size: 1.1rem;
+            }
+
+            .value-card h4 {
+                font-size: 1.5rem;
+            }
+
+            .value-card p {
+                font-size: 1rem;
+            }
+
+            .team-member-card img {
+                width: 150px;
+                height: 150px;
+            }
+
+            .team-member-card h4 {
+                font-size: 1.6rem;
+            }
+
+            .team-member-card p {
+                font-size: 0.95rem;
+            }
+
+            .timeline-item {
+                padding: 10px 25px;
+            }
+
+            .timeline-content h4 {
+                font-size: 1.4rem;
+            }
+
+            .timeline-content p {
+                font-size: 0.95rem;
+            }
+
+            .testimonial-card {
+                padding: 30px;
+            }
+
+            .testimonial-card p {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .section-padding {
+                padding: 70px 0;
+            }
+
+            .heading-primary {
+                font-size: 3rem;
+            }
+
+            .heading-secondary {
+                font-size: 2.2rem;
+                margin-bottom: 35px;
+            }
+
+            .heading-secondary::after {
+                width: 90px;
+                height: 5px;
+            }
+
+            .hero-section {
+                padding: 120px 20px;
+                min-height: 500px;
+            }
+
+            .hero-content p {
+                font-size: 1.15rem;
+                margin-bottom: 35px;
+            }
+
+            .story-content {
+                flex-direction: column;
+                gap: 40px;
+            }
+
+            .story-image {
+                order: -1;
+                transform: rotateZ(0deg);
+            }
+
+            .story-image:hover {
+                transform: scale(1.02);
+            }
+
+            .mission-vision-grid,
+            .values-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .team-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 30px;
+            }
+
+            .btn {
+                padding: 15px 30px;
+                font-size: 1.1rem;
+            }
+
+            .milestones-timeline::after {
+                left: 20px;
+            }
+
+            .timeline-item {
+                width: 100%;
+                padding-left: 60px;
+                padding-right: 10px;
+                left: 0;
+            }
+
+            .timeline-item::after {
+                left: 10px;
+            }
+
+            .timeline-item-right {
+                left: 0;
+            }
+
+            .timeline-item-right::after {
+                left: 10px;
+            }
+
+            .testimonial-carousel {
+                flex-wrap: nowrap;
+                overflow-x: scroll;
+            }
+
+            .testimonial-card {
+                flex: 0 0 90%;
+                margin: 0 15px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .heading-primary {
+                font-size: 2.5rem;
+                margin-bottom: 25px;
+            }
+
+            .heading-secondary {
+                font-size: 1.8rem;
+                margin-bottom: 30px;
+            }
+
+            .heading-secondary::after {
+                width: 70px;
+                height: 4px;
+            }
+
+            .paragraph-large {
+                font-size: 1.05rem;
+                margin-bottom: 30px;
+            }
+
+            .hero-section {
+                padding: 100px 15px;
+                min-height: 450px;
+            }
+
+            .hero-content p {
+                font-size: 1.05rem;
+                margin-bottom: 30px;
+            }
+
+            .story-text h3 {
+                font-size: 1.8rem;
+                margin-bottom: 20px;
+            }
+
+            .mission-card,
+            .vision-card,
+            .value-card,
+            .team-member-card {
+                padding: 30px;
+            }
+
+            .mission-card i,
+            .vision-card i {
+                font-size: 3.5rem;
+                margin-bottom: 25px;
+            }
+
+            .mission-card h3,
+            .vision-card h3 {
+                font-size: 1.6rem;
+            }
+
+            .team-member-card img {
+                width: 120px;
+                height: 120px;
+                margin-bottom: 25px;
+            }
+
+            .team-member-card h4 {
+                font-size: 1.4rem;
+            }
+
+            .team-member-card p {
+                font-size: 0.9rem;
+                margin-bottom: 20px;
+            }
+
+            .social-links {
+                gap: 15px;
+            }
+
+            .social-links a {
+                font-size: 1.3rem;
+            }
+
+            .btn {
+                padding: 12px 25px;
+                font-size: 1rem;
+            }
+
+            .timeline-item::after {
+                width: 20px;
+                height: 20px;
+                left: 15px;
+                top: 10px;
+            }
+
+            .timeline-content {
+                padding: 20px 25px;
+            }
+
+            .timeline-content h4 {
+                font-size: 1.3rem;
+            }
+
+            .testimonial-card {
+                padding: 25px;
+            }
+
+            .testimonial-card p {
+                font-size: 0.95rem;
+            }
+
+            .testimonial-card .customer-info img {
+                width: 70px;
+                height: 70px;
+            }
+        }
+
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+        }
+
+        .animate-on-scroll.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- nav -->
+  <header>
+
+        <!-- top -->
+        <div
+            class="flex flex-col md:flex-row justify-around items-center bg-white gap-4 p-4 shadow-[0_1px_5px_rgba(0,0,0,0.15)] w-full">
+            <div class="text-sm md:text-base">
+                <a href="mailto:info@codetalkerinnov.com" class="text-gray-700 hover:text-blue-600 transition-colors">
+                    info@codetalkerinnov.com
+                </a>
+            </div>
+
+            <!-- Social Icons -->
+            <div class="flex flex-col md:flex-row items-center gap-2 md:gap-4">
+                <span class="hidden md:inline-block text-gray-600 font-medium">Follow us</span>
+
+                <div class="flex gap-3">
+                    <!-- Facebook -->
+                    <a href="https://www.facebook.com/yourpage" target="_blank" aria-label="Facebook"
+                        class="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center hover:-translate-y-1 transition-transform">
+                        <i style="list-style: none;" class="fab fa-facebook-f text-sm"></i>
+                    </a>
+
+                    <!-- LinkedIn -->
+                    <a href="https://www.linkedin.com/in/yourprofile" target="_blank" aria-label="LinkedIn"
+                        class="w-8 h-8 rounded-full bg-blue-700 text-white flex items-center justify-center hover:-translate-y-1 transition-transform">
+                        <i style="list-style: none;" class="fab fa-linkedin-in text-sm"></i>
+                    </a>
+
+                    <!-- WhatsApp -->
+                    <a href="https://wa.me/92300XXXXXXX" target="_blank" aria-label="WhatsApp"
+                        class="w-8 h-8 rounded-full bg-green-500 text-white flex items-center justify-center hover:-translate-y-1 transition-transform">
+                        <i style="list-style: none;" class="fab fa-whatsapp text-sm"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <nav class="sticky top-0 z-50">
+            <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl p-4">
+                <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
+                    <img src="https://codetalkerinnov.com/wp-content/uploads/2020/12/CTI-Logo_1.png" class="h-10"
+                        alt=" " />
+
+                </a>
+
+                <button id="mobile-menu-toggle" type="button"
+                    class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-200"
+                    aria-controls="mega-menu-full-image" aria-expanded="false" aria-label="Toggle main menu">
+                    <span class="sr-only">Open main menu</span>
+                    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 17 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M1 1h15M1 7h15M1 13h15" />
+                    </svg>
+                </button>
+
+                <div id="mega-menu-full-image" class="hidden w-full md:flex md:w-auto md:order-1 items-center">
+                    <ul
+                        class="flex flex-col md:flex-row md:space-x-8 rtl:space-x-reverse font-medium mt-4 md:mt-0 items-center">
+                        <li class="relative">
+                            <a href="index.html"
+                                class="block py-2 px-3 text-gray-900 hover:text-blue-600 transition-colors duration-200 peer"
+                                aria-current="page">Home</a>
+                            <div
+                                class="absolute bottom-0 left-0 w-full h-[2px] bg-blue-600 transition-transform duration-300 transform scale-x-0 peer-hover:scale-x-100">
+                            </div>
+                        </li>
+                        <li class="relative">
+                            <button id="mega-menu-button-desktop"
+                                class="flex items-center justify-between w-full py-2 px-3 text-gray-900 hover:text-blue-600 transition-colors duration-200 md:w-auto peer"
+                                aria-expanded="false" aria-controls="mega-menu-dropdown">
+                                Services
+
+                                <svg class="w-2.5 h-2.5 ms-3 transition-transform duration-300 transform peer-aria-expanded:rotate-180"
+                                    aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                    viewBox="0 0 10 6">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2" d="m1 1 4 4 4-4" />
+                                </svg>
+                            </button>
+                            <div
+                                class="absolute bottom-0 left-0 w-full h-[2px] bg-blue-600 transition-transform duration-300 transform scale-x-0 peer-hover:scale-x-100">
+                            </div>
+                        </li>
+                        <li class="relative">
+                            <a href="about.html"
+                                class="block py-2 px-3 text-gray-900 hover:text-blue-600 transition-colors duration-200 peer">
+                                About Us</a>
+                            <div
+                                class="absolute bottom-0 left-0 w-full h-[2px] bg-blue-600 transition-transform duration-300 transform scale-x-0 peer-hover:scale-x-100">
+                            </div>
+                        </li>
+                        <li class="relative">
+                            <a href="portfolio.html"
+                                class="block py-2 px-3 text-gray-900 hover:text-blue-600 transition-colors duration-200 peer">Portfolio</a>
+                            <div
+                                class="absolute bottom-0 left-0 w-full h-[2px] bg-blue-600 transition-transform duration-300 transform scale-x-0 peer-hover:scale-x-100">
+                            </div>
+                        </li>
+                        <li class="relative">
+                            <a href="contact.html"
+                                class="block py-2 px-3 text-gray-900 hover:text-blue-600 transition-colors duration-200 peer">Contact</a>
+                            <div
+                                class="absolute bottom-0 left-0 w-full h-[2px] bg-blue-600 transition-transform duration-300 transform scale-x-0 peer-hover:scale-x-100">
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="mega-menu-dropdown"
+                class="absolute top-full left-0 right-0 bg-white border-t border-gray-200 shadow-md transform -translate-y-2 opacity-0 invisible transition-all duration-300">
+                <div class="container mx-auto px-4 py-8">
+                    <div class="grid grid-cols-1 md:grid-cols-4 gap text-sm text-gray-700">
+                        <ul class="space-y-3">
+                            <li class="font-bold text-gray-900 mb-2">Our Expertise</li>
+                            <li><a href="Web-Development.html"
+                                    class="hover:text-blue-600 transition-colors duration-200">Web Development</a>
+                            </li>
+                            <li><a href="Mobile App Development.html"
+                                    class="hover:text-blue-600 transition-colors duration-200">Mobile App
+                                    Development</a>
+                            </li>
+                            <li><a href="Graphing Designing.html"
+                                    class="hover:text-blue-600 transition-colors duration-200">Graphing Designing</a>
+                            </li>
+
+                            <li><a href="WordPress Development.html"
+                                    class="hover:text-blue-600 transition-colors duration-200">WordPress Development</a>
+                            </li>
+                        </ul>
+                        <ul class="space-y-3">
+                            <li class="font-bold text-gray-900 mb-2">Business Tools</li>
+                            <li><a href="Shopify Development.html"
+                                    class="hover:text-blue-600 transition-colors duration-200"> Shopify Development</a>
+                            </li>
+                            <li><a href="Software As A Service (SaaS).html"
+                                    class="hover:text-blue-600 transition-colors duration-200">Software As A Service
+                                    (SaaS)</a>
+                            </li>
+                            <li><a href="E-commerce Development.html"
+                                    class="hover:text-blue-600 transition-colors duration-200"> E-commerce
+                                    Development</a>
+                            </li>
+                            <li><a href="Support and maintenance.html"
+                                    class="hover:text-blue-600 transition-colors duration-200"> Support and
+                                    maintenance</a>
+                            </li>
+                        </ul>
+                        <ul class="space-y-3">
+                            <li class="font-bold text-gray-900 mb-2">Company</li>
+                            <li><a href="blog.html" class="hover:text-blue-600 transition-colors duration-200">Our
+                                    Blog</a></li>
+                            <li><a href="about.html" class="hover:text-blue-600 transition-colors duration-200">
+                                    Overview</a></li>
+                            <li><a href="portfolio.html" class="hover:text-blue-600 transition-colors duration-200">Our
+                                    Work</a></li>
+                            <li><a href="contact.html" class="hover:text-blue-600 transition-colors duration-200">Reach Us</a></li>
+                        </ul>
+                        <a href="#"
+                            class="mega-menu-image-card p-6 bg-center text-white bg-cover bg-no-repeat rounded-lg hover:  transition-all duration-300 transform hover:scale-105"
+                            style="background-image: url('/images/butterfly1.jpeg'); background-color: rgba(0, 0, 0, 0.5);   background-blend-mode: darken;">
+                            <p class="mb-5 text-lg font-bold leading-tight drop-shadow-md">
+                                Preview the new Flowbite dashboard navigation.
+                            </p>
+                            <button type="button"
+                                class="inline-flex items-center px-4 py-2 text-sm font-semibold text-white border-2 border-white rounded-full hover:bg-white hover:text-black focus:ring-4 focus:outline-none focus:ring-blue-300 transition-colors duration-200">
+                                Get started
+                                <svg class="w-4 h-4 ms-2 rtl:rotate-180" aria-hidden="true"
+                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
+                                </svg>
+                            </button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+    </header>
+    <main>
+        <section class="hero-section">
+            <div class="hero-content animate-on-scroll">
+                <h1 class="heading-primary">Hamari Kahani</h1>
+                <p>Hum kon hain, hum kya karte hain, aur humara maqsad kya hai. Janiye YourBrand ke safar ke bare mein.
+                </p>
+                <a href="#our-story" class="btn btn-primary">Mazeed Janiye</a>
+            </div>
+        </section>
+
+        <section id="our-story" class="our-story-section section-padding">
+            <div class="container text-center">
+                <h2 class="heading-secondary animate-on-scroll">Humara Safar</h2>
+                <p class="paragraph-large animate-on-scroll">YourBrand ki shuruaat ek chote se khayal se hui thi, jo
+                    waqt ke saath ek bade maqsad mein badal gaya. Humara safar junoon, mehnat, aur lagan se bhara hai.
+                </p>
+
+                <div class="story-content">
+                    <div class="story-text animate-on-scroll">
+                        <h3>Shuruaat se Ab Tak</h3>
+                        <p>2015 mein YourBrand ki buniyad rakhi gayi thi, jab humne mehsoos kiya ke market mein behtar
+                            quality aur customer-centric products ki kami hai. Humara maqsad sirf products bechna nahi,
+                            balke apne customers ki zindagi mein asani aur khushi lana tha.</p>
+                        <p>Pichle kuch saalon mein, humne boht kuch seekha aur boht si mushkilat ka saamna kiya. Lekin,
+                            humari team ki mehnat aur aapke bharose ne humein hamesha aage barhne ki himmat di. Aaj, hum
+                            fakhar se kehte hain ke YourBrand sirf ek brand nahi, balke ek community hai.</p>
+                        <p>Hum musalsal behtari ki taraf gamzan hain, naye products launch kar rahe hain, aur apni
+                            services ko mazeed behtar bana rahe hain. Humara vision aapki tawaqqaat se barh kar aapko
+                            behtareen tajurba faraham karna hai.</p>
+                    </div>
+                    <div class="story-image animate-on-scroll">
+                        <img src="https://placehold.co/600x400/ff4081/ffffff?text=Our+Journey"
+                            alt="Our Company Journey">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mission-vision-section section-padding">
+            <div class="container text-center">
+                <h2 class="heading-secondary animate-on-scroll" style="color: var(--white-color);">Humara Maqsad aur
+                    Vision</h2>
+                <p class="paragraph-large animate-on-scroll" style="color: rgba(255, 255, 255, 0.8);">Humara har qadam
+                    ek wazeh maqsad aur mustaqbil ke vision ke saath uthaya jata hai.</p>
+
+                <div class="mission-vision-grid">
+                    <div class="mission-card animate-on-scroll">
+                        <i class="fas fa-bullseye"></i>
+                        <h3>Humara Maqsad</h3>
+                        <p>Behtareen quality ke products aur services faraham karna jo hamare customers ki zarooriyat ko
+                            poora karein aur unki zindagi ko behtar banayein.</p>
+                    </div>
+                    <div class="vision-card animate-on-scroll">
+                        <i class="fas fa-eye"></i>
+                        <h3>Humara Vision</h3>
+                        <p>Ek aisi duniya banana jahan har shakhs ko behtareen aur mustanad products tak rasai hasil ho,
+                            aur hum innovation aur customer satisfaction ki misaal ban sakein.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="our-values-section section-padding">
+            <div class="container text-center">
+                <h2 class="heading-secondary animate-on-scroll">Humari Iqdaar</h2>
+                <p class="paragraph-large animate-on-scroll">Humari bunyadi iqdaar YourBrand ke har pehlu ko tashkeel
+                    deti hain aur humare safar ki rehnumai karti hain.</p>
+
+                <div class="values-grid">
+                    <div class="value-card animate-on-scroll">
+                        <i class="fas fa-handshake"></i>
+                        <h4>Ehtram</h4>
+                        <p>Hum har shakhs ke liye ehtram aur izzat ko farogh dete hain, chahe woh hamara customer ho,
+                            employee ho, ya partner.</p>
+                    </div>
+                    <div class="value-card animate-on-scroll">
+                        <i class="fas fa-lightbulb"></i>
+                        <h4>Innovation</h4>
+                        <p>Hum hamesha naye aur behtar tareeqon ki talash mein rehte hain taake aapko mustaqbil ke
+                            products aur services mil sakein.</p>
+                    </div>
+                    <div class="value-card animate-on-scroll">
+                        <i class="fas fa-heart"></i>
+                        <h4>Customer-Centricity</h4>
+                        <p>Humare customers humari har cheez ke markaz mein hain. Hum unki zarooriyat ko samajhte aur
+                            unhein poora karte hain.</p>
+                    </div>
+                    <div class="value-card animate-on-scroll">
+                        <i class="fas fa-award"></i>
+                        <h4>Quality</h4>
+                        <p>Hum behtareen quality ke mayar ko barqarar rakhte hain taake aapko hamesha mustanad aur
+                            qabil-e-bharosa products milen.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="milestones-section section-padding">
+            <div class="container text-center">
+                <h2 class="heading-secondary animate-on-scroll" style="color: var(--white-color);">Humare Ibtidai
+                    Marahil</h2>
+                <p class="paragraph-large animate-on-scroll" style="color: rgba(255, 255, 255, 0.8);">YourBrand ke safar
+                    mein kuch aham qadam aur kamyabiyan jo humein aaj yahan tak laye hain.</p>
+
+                <div class="milestones-timeline">
+                    <div class="timeline-item timeline-item-left animate-on-scroll">
+                        <div class="timeline-content">
+                            <span class="timeline-date">2015</span>
+                            <h4>Company Ki Buniyad</h4>
+                            <p>YourBrand ki shuruaat ek chote se office se hui, jahan humne apne pehle products develop
+                                kiye.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item timeline-item-right animate-on-scroll">
+                        <div class="timeline-content">
+                            <span class="timeline-date">2017</span>
+                            <h4>Pehli Investment</h4>
+                            <p>Humein apni pehli seed funding mili, jisne humein apni team barhane aur product line ko
+                                expand karne mein madad ki.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item timeline-item-left animate-on-scroll">
+                        <div class="timeline-content">
+                            <span class="timeline-date">2019</span>
+                            <h4>1 Million Customers</h4>
+                            <p>Humne 1 million customers ka hadaf poora kiya, jo hamare liye ek boht bari kamyabi thi.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="timeline-item timeline-item-right animate-on-scroll">
+                        <div class="timeline-content">
+                            <span class="timeline-date">2022</span>
+                            <h4>International Expansion</h4>
+                            <p>Humne apni services ko international markets tak phelaya, aur naye mulkon mein customers
+                                tak rasai hasil ki.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item timeline-item-left animate-on-scroll">
+                        <div class="timeline-content">
+                            <span class="timeline-date">2024</span>
+                            <h4>Nayi Product Line Launch</h4>
+                            <p>Humne apni sab se bari aur innovative product line launch ki, jise customers ne boht
+                                pasand kiya.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="our-team-section section-padding">
+            <div class="container text-center">
+                <h2 class="heading-secondary animate-on-scroll">Humari Team</h2>
+                <p class="paragraph-large animate-on-scroll">Humari team YourBrand ki asal taaqat hai. Har member apne
+                    shobay mein mahir aur apne maqsad ke liye pur-azm hai.</p>
+
+                <div class="team-grid">
+                    <div class="team-member-card animate-on-scroll">
+                        <img src="https://placehold.co/300x300/3f51b5/ffffff?text=CEO" alt="Team Member: Ali Khan, CEO">
+                        <h4>Ali Khan</h4>
+                        <p>Founder & CEO</p>
+                        <div class="social-links">
+                            <a href="#" aria-label="Ali Khan's Twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="#" aria-label="Ali Khan's LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                    <div class="team-member-card animate-on-scroll">
+                        <img src="https://placehold.co/300x300/ff4081/ffffff?text=CMO"
+                            alt="Team Member: Sara Ahmed, CMO">
+                        <h4>Sara Ahmed</h4>
+                        <p>Chief Marketing Officer</p>
+                        <div class="social-links">
+                            <a href="#" aria-label="Sara Ahmed's Twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="#" aria-label="Sara Ahmed's LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                    <div class="team-member-card animate-on-scroll">
+                        <img src="https://placehold.co/300x300/2c3e50/ffffff?text=CTO"
+                            alt="Team Member: Omar Farooq, CTO">
+                        <h4>Omar Farooq</h4>
+                        <p>Chief Technology Officer</p>
+                        <div class="social-links">
+                            <a href="#" aria-label="Omar Farooq's Twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="#" aria-label="Omar Farooq's LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                    <div class="team-member-card animate-on-scroll">
+                        <img src="https://placehold.co/300x300/4CAF50/ffffff?text=Head+of+Ops"
+                            alt="Team Member: Aisha Malik, Head of Operations">
+                        <h4>Aisha Malik</h4>
+                        <p>Head of Operations</p>
+                        <div class="social-links">
+                            <a href="#" aria-label="Aisha Malik's Twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="#" aria-label="Aisha Malik's LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="testimonials-section section-padding">
+            <div class="container text-center">
+                <h2 class="heading-secondary animate-on-scroll">Customers Ki Raye</h2>
+                <p class="paragraph-large animate-on-scroll">Hamare customers YourBrand ke bare mein kya kehte hain.
+                    Unki khushi hamari kamyabi hai.</p>
+
+                <div class="testimonial-carousel animate-on-scroll">
+                    <div class="testimonial-card">
+                        <i class="fas fa-quote-right quote-icon"></i>
+                        <p>"YourBrand ke products ne meri zindagi asan bana di hai. Quality aur service dono lajawab
+                            hain! Highly recommended."</p>
+                        <div class="customer-info">
+                            <img src="https://placehold.co/80x80/3f51b5/ffffff?text=C1" alt="Customer: Fatima Zahra">
+                            <h5>Fatima Zahra</h5>
+                            <span>Lahore, Pakistan</span>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <i class="fas fa-quote-right quote-icon"></i>
+                        <p>"Main YourBrand ki team ki dedication se boht mutasir hoon. Har qadam par unhone meri madad
+                            ki. Shukriya!"</p>
+                        <div class="customer-info">
+                            <img src="https://placehold.co/80x80/ff4081/ffffff?text=C2" alt="Customer: Ahmed Bilal">
+                            <h5>Ahmed Bilal</h5>
+                            <span>Karachi, Pakistan</span>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <i class="fas fa-quote-right quote-icon"></i>
+                        <p>"Products ki quality aur delivery speed, YourBrand ne sab kuch perfect rakha hai. Main inka
+                            permanent customer ban gaya hoon."</p>
+                        <div class="customer-info">
+                            <img src="https://placehold.co/80x80/2c3e50/ffffff?text=C3" alt="Customer: Zoya Khan">
+                            <h5>Zoya Khan</h5>
+                            <span>Islamabad, Pakistan</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- footer -->
+    <div id="footer-container"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.animate-on-scroll').forEach(element => {
+                observer.observe(element);
+            });
+
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+
+    <!-- mega menu ki js  -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const megaMenuButton = document.getElementById('mega-menu-button-desktop');
+            const megaMenuDropdown = document.getElementById('mega-menu-dropdown');
+            const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+            const mobileMenu = document.getElementById('mega-menu-full-image');
+
+            if (megaMenuButton) {
+                let timeoutId = null;
+
+                const showMegaMenu = () => {
+                    clearTimeout(timeoutId);
+                    megaMenuButton.setAttribute('aria-expanded', 'true');
+                    megaMenuDropdown.classList.remove('opacity-0', 'invisible', '-translate-y-2');
+                    megaMenuDropdown.classList.add('opacity-100', 'visible', 'translate-y-0');
+                };
+
+                const hideMegaMenu = () => {
+                    timeoutId = setTimeout(() => {
+                        megaMenuButton.setAttribute('aria-expanded', 'false');
+                        megaMenuDropdown.classList.remove('opacity-100', 'visible', 'translate-y-0');
+                        megaMenuDropdown.classList.add('opacity-0', 'invisible', '-translate-y-2');
+                    }, 100);
+                };
+
+                megaMenuButton.addEventListener('mouseenter', showMegaMenu);
+                megaMenuButton.addEventListener('mouseleave', hideMegaMenu);
+
+                megaMenuDropdown.addEventListener('mouseenter', showMegaMenu);
+                megaMenuDropdown.addEventListener('mouseleave', hideMegaMenu);
+            }
+
+            if (mobileMenuToggle) {
+                mobileMenuToggle.addEventListener('click', () => {
+                    const isExpanded = mobileMenuToggle.getAttribute('aria-expanded') === 'true';
+                    mobileMenuToggle.setAttribute('aria-expanded', !isExpanded);
+                    mobileMenu.classList.toggle('hidden');
+                    mobileMenu.classList.toggle('flex');
+                });
+            }
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+        crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
