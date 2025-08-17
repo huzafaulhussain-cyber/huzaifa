@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fixed Flowbite Mega Menu</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Google Fonts (Poppins) -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+
+        <!-- top -->
+        <div
+            class="flex flex-col md:flex-row justify-around items-center bg-white gap-4 p-4 shadow-[0_1px_5px_rgba(0,0,0,0.15)] w-full">
+            <div class="text-sm md:text-base">
+                <a href="mailto:info@codetalkerinnov.com" class="text-gray-700 hover:text-blue-600 transition-colors">
+                    info@codetalkerinnov.com
+                </a>
+            </div>
+
+            <!-- Social Icons -->
+            <div class="flex flex-col md:flex-row items-center gap-2 md:gap-4">
+                <span class="hidden md:inline-block text-gray-600 font-medium">Follow us</span>
+
+                <div class="flex gap-3">
+                    <!-- Facebook -->
+                    <a href="https://www.facebook.com/yourpage" target="_blank" aria-label="Facebook"
+                        class="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center hover:-translate-y-1 transition-transform">
+                        <i style="list-style: none;" class="fab fa-facebook-f text-sm"></i>
+                    </a>
+
+                    <!-- LinkedIn -->
+                    <a href="https://www.linkedin.com/in/yourprofile" target="_blank" aria-label="LinkedIn"
+                        class="w-8 h-8 rounded-full bg-blue-700 text-white flex items-center justify-center hover:-translate-y-1 transition-transform">
+                        <i style="list-style: none;" class="fab fa-linkedin-in text-sm"></i>
+                    </a>
+
+                    <!-- WhatsApp -->
+                    <a href="https://wa.me/92300XXXXXXX" target="_blank" aria-label="WhatsApp"
+                        class="w-8 h-8 rounded-full bg-green-500 text-white flex items-center justify-center hover:-translate-y-1 transition-transform">
+                        <i style="list-style: none;" class="fab fa-whatsapp text-sm"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <nav class="sticky top-0 z-50">
+            <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl p-4">
+                <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
+                    <img src="https://codetalkerinnov.com/wp-content/uploads/2020/12/CTI-Logo_1.png" class="h-10"
+                        alt=" " />
+
+                </a>
+
+                <button id="mobile-menu-toggle" type="button"
+                    class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-200"
+                    aria-controls="mega-menu-full-image" aria-expanded="false" aria-label="Toggle main menu">
+                    <span class="sr-only">Open main menu</span>
+                    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 17 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M1 1h15M1 7h15M1 13h15" />
+                    </svg>
+                </button>
+
+                <div id="mega-menu-full-image" class="hidden w-full md:flex md:w-auto md:order-1 items-center">
+                    <ul
+                        class="flex flex-col md:flex-row md:space-x-8 rtl:space-x-reverse font-medium mt-4 md:mt-0 items-center">
+                        <li class="relative">
+                            <a href="index.html"
+                                class="block py-2 px-3 text-gray-900 hover:text-blue-600 transition-colors duration-200 peer"
+                                aria-current="page">Home</a>
+                            <div
+                                class="absolute bottom-0 left-0 w-full h-[2px] bg-blue-600 transition-transform duration-300 transform scale-x-0 peer-hover:scale-x-100">
+                            </div>
+                        </li>
+                        <li class="relative">
+                            <button id="mega-menu-button-desktop"
+                                class="flex items-center justify-between w-full py-2 px-3 text-gray-900 hover:text-blue-600 transition-colors duration-200 md:w-auto peer"
+                                aria-expanded="false" aria-controls="mega-menu-dropdown">
+                                Services
+
+                                <svg class="w-2.5 h-2.5 ms-3 transition-transform duration-300 transform peer-aria-expanded:rotate-180"
+                                    aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                    viewBox="0 0 10 6">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2" d="m1 1 4 4 4-4" />
+                                </svg>
+                            </button>
+                            <div
+                                class="absolute bottom-0 left-0 w-full h-[2px] bg-blue-600 transition-transform duration-300 transform scale-x-0 peer-hover:scale-x-100">
+                            </div>
+                        </li>
+                        <li class="relative">
+                            <a href="about.html"
+                                class="block py-2 px-3 text-gray-900 hover:text-blue-600 transition-colors duration-200 peer">
+                                About Us</a>
+                            <div
+                                class="absolute bottom-0 left-0 w-full h-[2px] bg-blue-600 transition-transform duration-300 transform scale-x-0 peer-hover:scale-x-100">
+                            </div>
+                        </li>
+                        <li class="relative">
+                            <a href="portfolio.html"
+                                class="block py-2 px-3 text-gray-900 hover:text-blue-600 transition-colors duration-200 peer">Portfolio</a>
+                            <div
+                                class="absolute bottom-0 left-0 w-full h-[2px] bg-blue-600 transition-transform duration-300 transform scale-x-0 peer-hover:scale-x-100">
+                            </div>
+                        </li>
+                        <li class="relative">
+                            <a href="contact.html"
+                                class="block py-2 px-3 text-gray-900 hover:text-blue-600 transition-colors duration-200 peer">Contact</a>
+                            <div
+                                class="absolute bottom-0 left-0 w-full h-[2px] bg-blue-600 transition-transform duration-300 transform scale-x-0 peer-hover:scale-x-100">
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="mega-menu-dropdown"
+                class="absolute top-full left-0 right-0 bg-white border-t border-gray-200 shadow-md transform -translate-y-2 opacity-0 invisible transition-all duration-300">
+                <div class="container mx-auto px-4 py-8">
+                    <div class="grid grid-cols-1 md:grid-cols-4 gap text-sm text-gray-700">
+                        <ul class="space-y-3">
+                            <li class="font-bold text-gray-900 mb-2">Our Expertise</li>
+                            <li><a href="Web-Development.html"
+                                    class="hover:text-blue-600 transition-colors duration-200">Web Development</a>
+                            </li>
+                            <li><a href="Mobile App Development.html"
+                                    class="hover:text-blue-600 transition-colors duration-200">Mobile App
+                                    Development</a>
+                            </li>
+                            <li><a href="Graphing Designing.html"
+                                    class="hover:text-blue-600 transition-colors duration-200">Graphing Designing</a>
+                            </li>
+
+                            <li><a href="WordPress Development.html"
+                                    class="hover:text-blue-600 transition-colors duration-200">WordPress Development</a>
+                            </li>
+                        </ul>
+                        <ul class="space-y-3">
+                            <li class="font-bold text-gray-900 mb-2">Business Tools</li>
+                            <li><a href="Shopify Development.html"
+                                    class="hover:text-blue-600 transition-colors duration-200"> Shopify Development</a>
+                            </li>
+                            <li><a href="Software As A Service (SaaS).html"
+                                    class="hover:text-blue-600 transition-colors duration-200">Software As A Service
+                                    (SaaS)</a>
+                            </li>
+                            <li><a href="E-commerce Development.html"
+                                    class="hover:text-blue-600 transition-colors duration-200"> E-commerce
+                                    Development</a>
+                            </li>
+                            <li><a href="Support and maintenance.html"
+                                    class="hover:text-blue-600 transition-colors duration-200"> Support and
+                                    maintenance</a>
+                            </li>
+                        </ul>
+                        <ul class="space-y-3">
+                            <li class="font-bold text-gray-900 mb-2">Company</li>
+                            <li><a href="blog.html" class="hover:text-blue-600 transition-colors duration-200">Our
+                                    Blog</a></li>
+                            <li><a href="about.html" class="hover:text-blue-600 transition-colors duration-200">
+                                    Overview</a></li>
+                            <li><a href="portfolio.html" class="hover:text-blue-600 transition-colors duration-200">Our
+                                    Work</a></li>
+                            <li><a href="contact.html" class="hover:text-blue-600 transition-colors duration-200">Reach
+                                    Us</a></li>
+                        </ul>
+                        <a href="#"
+                            class="mega-menu-image-card p-6 bg-center text-white bg-cover bg-no-repeat rounded-lg hover:  transition-all duration-300 transform hover:scale-105"
+                            style="background-image: url('/images/butterfly1.jpeg'); background-color: rgba(0, 0, 0, 0.5);   background-blend-mode: darken;">
+                            <p class="mb-5 text-lg font-bold leading-tight drop-shadow-md">
+                                Preview the new Flowbite dashboard navigation.
+                            </p>
+                            <button type="button"
+                                class="inline-flex items-center px-4 py-2 text-sm font-semibold text-white border-2 border-white rounded-full hover:bg-white hover:text-black focus:ring-4 focus:outline-none focus:ring-blue-300 transition-colors duration-200">
+                                Get started
+                                <svg class="w-4 h-4 ms-2 rtl:rotate-180" aria-hidden="true"
+                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
+                                </svg>
+                            </button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+    </header>
+
+    <section>
+
+        <!-- banner slider  -->
+        <div class="carousel mt-1">
+            <div class="list">
+                <div class="item" style="background-image: url(images/eagel1.jpg);">
+                    <div class="content">
+                        <div class="title">SLIDER</div>
+                        <div class="name">EAGLE</div>
+                        <div class="des">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis culpa
+                            similique
+                            consequuntur, reprehenderit dicta repudiandae.</div>
+                        <div class="btn">
+                            <button aria-label="See More about Eagle">See More</button>
+                            <button aria-label="Subscribe for updates">Subscribe</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item" style="background-image: url(images/owl1.jpg);">
+                    <div class="content">
+                        <div class="title">SLIDER</div>
+                        <div class="name">OWL</div>
+                        <div class="des">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis culpa
+                            similique
+                            consequuntur, reprehenderit dicta repudiandae.</div>
+                        <div class="btn">
+                            <button aria-label="See More about Owl">See More</button>
+                            <button aria-label="Subscribe for updates">Subscribe</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item" style="background-image: url(images/crow.jpg);">
+                    <div class="content">
+                        <div class="title">SLIDER</div>
+                        <div class="name">CROW</div>
+                        <div class="des">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis culpa
+                            similique
+                            consequuntur, reprehenderit dicta repudiandae.</div>
+                        <div class="btn">
+                            <button aria-label="See More about Crow">See More</button>
+                            <button aria-label="Subscribe for updates">Subscribe</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item" style="background-image: url(images/butterfly1.jpeg);">
+                    <div class="content">
+                        <div class="title">SLIDER</div>
+                        <div class="name">BUTTERFLY</div>
+                        <div class="des">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis culpa
+                            similique
+                            consequuntur, reprehenderit dicta repudiandae.</div>
+                        <div class="btn">
+                            <button aria-label="See More about Butterfly">See More</button>
+                            <button aria-label="Subscribe for updates">Subscribe</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item" style="background-image: url(images/owl2.jpg);">
+                    <div class="content">
+                        <div class="title">SLIDER</div>
+                        <div class="name">OWL</div>
+                        <div class="des">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis culpa
+                            similique
+                            consequuntur, reprehenderit dicta repudiandae.</div>
+                        <div class="btn">
+                            <button aria-label="See More about Owl">See More</button>
+                            <button aria-label="Subscribe for updates">Subscribe</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item" style="background-image: url(images/eagel3.jpg);">
+                    <div class="content">
+                        <div class="title">SLIDER</div>
+                        <div class="name">EAGLE</div>
+                        <div class="des">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis culpa
+                            similique
+                            consequuntur, reprehenderit dicta repudiandae.</div>
+                        <div class="btn">
+                            <button aria-label="See More about Eagle">See More</button>
+                            <button aria-label="Subscribe for updates">Subscribe</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item" style="background-image: url(images/kingfirser2.jpeg);">
+                    <div class="content">
+                        <div class="title">SLIDER</div>
+                        <div class="name">KINGFISHER</div>
+                        <div class="des">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis culpa
+                            similique
+                            consequuntur, reprehenderit dicta repudiandae.</div>
+                        <div class="btn">
+                            <button aria-label="See More about Kingfisher">See More</button>
+                            <button aria-label="Subscribe for updates">Subscribe</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item" style="background-image: url(images/parrot2.jpg);">
+                    <div class="content">
+                        <div class="title">SLIDER</div>
+                        <div class="name">PARROT</div>
+                        <div class="des">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis culpa
+                            similique
+                            consequuntur, reprehenderit dicta repudiandae.</div>
+                        <div class="btn">
+                            <button aria-label="See More about Parrot">See More</button>
+                            <button aria-label="Subscribe for updates">Subscribe</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item" style="background-image: url(images/heron.jpeg);">
+                    <div class="content">
+                        <div class="title">SLIDER</div>
+                        <div class="name">HERON</div>
+                        <div class="des">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis culpa
+                            similique
+                            consequuntur, reprehenderit dicta repudiandae.</div>
+                        <div class="btn">
+                            <button aria-label="See More about Heron">See More</button>
+                            <button aria-label="Subscribe for updates">Subscribe</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item" style="background-image: url(images/butterfly2.jpg);">
+                    <div class="content">
+                        <div class="title">SLIDER</div>
+                        <div class="name">BUTTERFLY</div>
+                        <div class="des">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis culpa
+                            similique
+                            consequuntur, reprehenderit dicta repudiandae.</div>
+                        <div class="btn">
+                            <button aria-label="See More about Butterfly">See More</button>
+                            <button aria-label="Subscribe for updates">Subscribe</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item" style="background-image: url(images/parrot2.jpg);">
+                    <div class="content">
+                        <div class="title">SLIDER</div>
+                        <div class="name">PARROT</div>
+                        <div class="des">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis culpa
+                            similique
+                            consequuntur, reprehenderit dicta repudiandae.</div>
+                        <div class="btn">
+                            <button aria-label="See More about Parrot">See More</button>
+                            <button aria-label="Subscribe for updates">Subscribe</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="arrows">
+                <button class="prev" aria-label="Previous Slide">&lt;</button>
+                <button class="next" aria-label="Next Slide">&gt;</button>
+            </div>
+
+            <div class="timeRunning"></div>
+        </div>
+        <!-- info  -->
+        <div style="padding: 0 50px;">
+            <div class="info-section">
+                <div class="info-card"
+                    style="display: flex; align-items: center;justify-content: center;flex-direction: column;">
+                    <img src="https://codetalkerinnov.com/wp-content/uploads/2016/11/1455806751_007_008_map_pin_locate_location_marker_gps_coordinate.svg"
+                        alt="Location Pin">
+                    <p style="font-size: 1.511rem;">Icon WEBSITE DESIGN</p>
+                    <p>We offer the best website solutions for getting the competitive advantage.</p>
+                </div>
+
+                <div class="info-card"
+                    style="display: flex; align-items: center;justify-content: center;flex-direction: column;">
+                    <img src="https://codetalkerinnov.com/wp-content/uploads/2016/11/1455806744_007_016_map_location_place_3.svg"
+                        alt="Location Pin">
+
+                    <p style="font-size: 1.511rem;">Icon WEBSITE DESIGN</p>
+                    <p>We offer the best website solutions for getting the competitive advantage.</p>
+
+                </div>
+
+                <div class="info-card"
+                    style="display: flex; align-items: center;justify-content: center;flex-direction: column;">
+                    <img src="https://codetalkerinnov.com/wp-content/uploads/2016/11/1455806769_007_036_anchor_marine_nautical_travel_ship_sea_ocean.svg"
+                        alt="Anchor">
+                    <p style="font-size: 1.511rem;">Icon WEBSITE DESIGN</p>
+                    <p>We offer the best website solutions for getting the competitive advantage.</p>
+                </div>
+
+                <div class="info-card"
+                    style="display: flex; align-items: center;justify-content: center;flex-direction: column;">
+                    <img src="https://codetalkerinnov.com/wp-content/uploads/2016/11/1455806883_005_035_darts_dart_target_spear_game_sport_competition_goal_aim.svg"
+                        alt="Darts">
+                    <p style="font-size: 1.511rem;">Icon WEBSITE DESIGN</p>
+                    <p>We offer the best website solutions for getting the competitive advantage.</p>
+                </div>
+
+                <div class="info-card"
+                    style="display: flex; align-items: center;justify-content: center;flex-direction: column;">
+                    <img src="https://codetalkerinnov.com/wp-content/uploads/2016/11/1456956050_001_036_hot_air_baloon.svg"
+                        alt="Hot Air Balloon">
+                    <div style="align-items: center;">
+                        <p style="font-size: 1.511rem;">Icon WEBSITE DESIGN</p>
+                        <p>We offer the best website solutions for getting the competitive advantage.</p>
+                    </div>
+                </div>
+
+                <div class="info-card"
+                    style="display: flex; align-items: center;justify-content: center;flex-direction: column;">
+                    <img src="https://codetalkerinnov.com/wp-content/uploads/2016/11/1455806862_020_185_favorite_flagged_marked_mail_email_envelope_message_2.svg"
+                        alt="Email">
+                    <p style="font-size: 1.511rem;">Icon WEBSITE DESIGN</p>
+                    <p>We offer the best website solutions for getting the competitive advantage.</p>
+                </div>
+
+
+            </div>
+        </div>
+
+        <!-- contact  -->
+        <div class="contact-section">
+            <div class="contact-container">
+                <div class="contact-text-content">
+                    <h1 style=" font-size: 43px; font-weight: bold; color: #1a237e;">Welcome to Our Hub</h1>
+                    <p>We're thrilled to have you here! Our content is crafted to provide you with the best experience
+                        possible. If you have any questions, feedback, or need support, please fill out the form.</p>
+                    <p>Hey there! So glad you're here. We work hard to create content that you'll love. Got a question?
+                        Something on your mind? Or just want to say hi? Don't hesitate to drop us a line using the form.
+                        Your thoughts mean a lot to us, and we're always ready to listen.</p>
+                    <p>Your feedback is very important to us and helps us improve. Kindly share your thoughts below.</p>
+                </div>
+
+                <div class="form-container">
+                    <p class="title">Contact Us</p>
+                    <form class="form">
+                        <div class="input-group">
+                            <label for="username">Name</label>
+                            <input type="text" name="username">
+                        </div>
+                        <div class="input-group">
+                            <label for="Email">Email</label>
+                            <input type="Email" name="Email">
+                        </div>
+                        <div class="input-group">
+                            <label for="details">Details</label>
+                            <input type="text" name="details">
+                            <div class="forgot">
+                                <a rel="noopener noreferrer" href="#">Forgot Password ?</a>
+                            </div>
+                        </div>
+                        <button class="button1">
+                            <div class="svg-wrapper-1">
+                                <div class="svg-wrapper">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                                        <path fill="none" d="M0 0h24v24H0z"></path>
+                                        <path fill="currentColor"
+                                            d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z">
+                                        </path>
+                                    </svg>
+                                </div>
+                            </div>
+                            <span>Send</span>
+                        </button>
+                    </form>
+                    <div class="social-message">
+                        <div class="line"></div>
+                        <p class="message">Login with social accounts</p>
+                        <div class="line"></div>
+                    </div>
+                    <div class="social-icons">
+                        <button aria-label="Log in with Google" class="icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="w-5 h-5 fill-current">
+                                <path
+                                    d="M16.318 13.714v5.484h9.078c-0.37 2.354-2.745 6.901-9.078 6.901-5.458 0-9.917-4.521-9.917-10.099s4.458-10.099 9.917-10.099c3.109 0 5.193 1.318 6.38 2.464l4.339-4.182c-2.786-2.599-6.396-4.182-10.719-4.182-8.844 0-16 7.151-16 16s7.156 16 16 16c9.234 0 15.365-6.49 15.365-15.635 0-1.052-0.115-1.854-0.255-2.651z">
+                                </path>
+                            </svg>
+                        </button>
+                        <button aria-label="Log in with Twitter" class="icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="w-5 h-5 fill-current">
+                                <path
+                                    d="M31.937 6.093c-1.177 0.516-2.437 0.871-3.765 1.032 1.355-0.813 2.391-2.099 2.885-3.631-1.271 0.74-2.677 1.276-4.172 1.579-1.192-1.276-2.896-2.079-4.787-2.079-3.625 0-6.563 2.937-6.563 6.557 0 0.521 0.063 1.021 0.172 1.495-5.453-0.255-10.287-2.875-13.52-6.833-0.568 0.964-0.891 2.084-0.891 3.303 0 2.281 1.161 4.281 2.916 5.457-1.073-0.031-2.083-0.328-2.968-0.817v0.079c0 3.181 2.26 5.833 5.26 6.437-0.547 0.145-1.131 0.229-1.724 0.229-0.421 0-0.823-0.041-1.224-0.115 0.844 2.604 3.26 4.5 6.14 4.557-2.239 1.755-5.077 2.801-8.135 2.801-0.521 0-1.041-0.025-1.563-0.088 2.917 1.86 6.36 2.948 10.079 2.948 12.067 0 18.661-9.995 18.661-18.651 0-0.276 0-0.557-0.021-0.839 1.287-0.917 2.401-2.079 3.281-3.396z">
+                                </path>
+                            </svg>
+                        </button>
+                        <button aria-label="Log in with GitHub" class="icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="w-5 h-5 fill-current">
+                                <path
+                                    d="M16 0.396c-8.839 0-16 7.167-16 16 0 7.073 4.584 13.068 10.937 15.183 0.803 0.151 1.093-0.344 1.093-0.772 0-0.38-0.009-1.385-0.015-2.719-4.453 0.964-5.391-2.151-5.391-2.151-0.729-1.844-1.781-2.339-1.781-2.339-1.448-0.989 0.115-0.968 0.115-0.968 1.604 0.109 2.448 1.645 2.448 1.645 1.427 2.448 3.744 1.74 4.661 1.328 0.14-1.031 0.557-1.74 1.011-2.135-3.552-0.401-7.287-1.776-7.287-7.907 0-1.751 0.62-3.177 1.645-4.297-0.177-0.401-0.719-2.031 0.141-4.235 0 0 1.339-0.427 4.4 1.641 1.281-0.355 2.641-0.532 4-0.541 1.36 0.009 2.719 0.187 4 0.541 3.043-2.068 4.381-1.641 4.381-1.641 0.859 2.204 0.317 3.833 0.161 4.235 1.015 1.12 1.635 2.547 1.635 4.297 0 6.145-3.74 7.5-7.296 7.891 0.556 0.479 1.077 1.464 1.077 2.959 0 2.14-0.020 3.864-0.020 4.385 0 0.416 0.28 0.916 1.104 0.755 6.4-2.093 10.979-8.093 10.979-15.156 0-8.833-7.161-16-16-16z">
+                                </path>
+                            </svg>
+                        </button>
+                    </div>
+                    <p class="signup">Don't have an account? <a rel="noopener noreferrer" href="#">Sign up</a></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- about us -->
+        <div class="about-section">
+            <div class="about-row">
+                <div class="content">
+                    <h1 style=" font-size: 43px; font-weight: bold; color: #1a237e;">Who We Are</h1>
+                    <p>Codetalkerinnov is a leading premium design agency committed to delivering exceptional quality,
+                        cutting-edge innovation, and unmatched efficiency. Leveraging the latest technologies, we create
+                        impactful digital solutions that drive measurable growth for our clients’ businesses. Our
+                        approach
+                        is built on a foundation of strong work ethic, unwavering integrity, and a relentless pursuit of
+                        excellence. Every project we undertake is crafted with precision, creativity, and a focus on
+                        delivering results that not only meet but exceed expectations.</p>
+                    <p>Over the years, Codetalkerinnov has consistently delivered visually striking, award-winning
+                        designs
+                        across a wide range of industries. Our expertise has empowered clients to elevate their digital
+                        presence, strengthen brand identity, and achieve measurable online success. By blending
+                        creativity
+                        with strategy, we ensure that every project not only looks exceptional but also delivers real
+                        value
+                        in today’s competitive digital landscape.</p>
+                    <div class="buttons">
+                        <button class="btn2">LEARN MORE</button>
+                        <button class="cssbuttons-io">
+                            <span>Get A Quote</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="https://codetalkerinnov.com/wp-content/uploads/2020/11/pngegg.png" alt="About Us Image">
+                </div>
+            </div>
+
+            <div class="about-row about-row-reverse">
+                <div class="content">
+                    <h1>Who We Are</h1>
+                    <p>We are here to help you, succeed in your business and achieve your goals. Our bespoke websites
+                        and
+                        software are carefully designed and developed by our experienced team to meet requirements of
+                        your
+                        business. – We design – We develop – We promote – We support</p>
+                    <div class="buttons">
+                        <button class="btn2">About us</button>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="https://codetalkerinnov.com/wp-content/uploads/2020/11/about-3.png"
+                        alt="Another About Us Image">
+                </div>
+            </div>
+        </div>
+
+
+        <!-- counter -->
+        <div class="stats-container">
+            <div class="stat-item">
+                <div class="stat-number" data-count="95">0</div><span class="plus-sign">%</span>
+                <p class="stat-label">CLIENT RETENTION</p>
+                <div class="underline"></div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" data-count="2">0</div><span class="plus-sign">+</span>
+                <p class="stat-label">YEARS OF SERVICE</p>
+                <div class="underline"></div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" data-count="11">0</div><span class="plus-sign">+</span>
+                <p class="stat-label">PROFESSIONALS</p>
+                <div class="underline"></div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" data-count="20">0</div><span class="plus-sign">+</span>
+                <p class="stat-label">SATISFIED CLIENTS</p>
+                <div class="underline"></div>
+            </div>
+        </div>
+
+
+    </section>
+
+    <section class="section2">
+
+        <!-- slider 1 -->
+        <div class="loading" id="loading">
+            <div class="spinner"></div>
+        </div>
+        <div class="particles" id="particles"></div>
+        <section class="testimonial-section">
+            <div class="container">
+                <div class="section-header">
+                    <h1>What Our Clients Say</h1>
+                    <p>Discover why businesses worldwide trust us with their most important projects</p>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-wrapper" id="sliderWrapper">
+                        <div class="slide">
+                            <div class="slide-content">
+
+                                <div class="left-content">
+                                    <div class="slide-number">01 — SUCCESS STORY</div>
+                                    <h2 class="slide-title">Digital Innovation Excellence</h2>
+                                    <p class="slide-description">
+                                        We transform ambitious ideas into extraordinary digital experiences that
+                                        captivate audiences and drive unprecedented business growth.
+                                    </p>
+                                    <button class="cta-button">
+                                        <i class="fas fa-rocket"></i> Discover More
+                                    </button>
+                                </div>
+                                <div class="testimonial-card">
+                                    <div class="card-inner">
+                                        <div class="quote-icon">
+                                            <i class="fas fa-quote-right"></i>
+                                        </div>
+                                        <div class="rating">
+                                            <i class="fas fa-star star" style="--i: 0"></i>
+                                            <i class="fas fa-star star" style="--i: 1"></i>
+                                            <i class="fas fa-star star" style="--i: 2"></i>
+                                            <i class="fas fa-star star" style="--i: 3"></i>
+                                            <i class="fas fa-star star" style="--i: 4"></i>
+                                        </div>
+                                        <p class="testimonial-text">
+                                            "Working with this team completely transformed our business. Their
+                                            innovative approach and attention to detail exceeded every expectation we
+                                            had."
+                                        </p>
+                                        <div class="client-info">
+                                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face"
+                                                alt="Ahmed Hassan" class="client-avatar">
+                                            <div class="client-details">
+                                                <h4>Ahmed Hassan</h4>
+                                                <p>CEO, TechVision</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="progress-bar" style="width: 0%"></div>
+                        </div>
+                        <div class="slide">
+                            <div class="slide-content">
+                                <div class="left-content">
+                                    <div class="slide-number">02 — INNOVATION</div>
+                                    <h2 class="slide-title">Creative Solutions That Inspire</h2>
+                                    <p class="slide-description">
+                                        Our cutting-edge design philosophy combines artistic vision with strategic
+                                        thinking to create memorable brand experiences.
+                                    </p>
+                                    <button class="cta-button">
+                                        <i class="fas fa-lightbulb"></i> Explore Projects
+                                    </button>
+                                </div>
+                                <div class="testimonial-card">
+                                    <div class="card-inner">
+                                        <div class="quote-icon">
+                                            <i class="fas fa-quote-right"></i>
+                                        </div>
+                                        <div class="rating">
+                                            <i class="fas fa-star star" style="--i: 0"></i>
+                                            <i class="fas fa-star star" style="--i: 1"></i>
+                                            <i class="fas fa-star star" style="--i: 2"></i>
+                                            <i class="fas fa-star star" style="--i: 3"></i>
+                                            <i class="fas fa-star star" style="--i: 4"></i>
+                                        </div>
+                                        <p class="testimonial-text">
+                                            "The creativity and professionalism displayed throughout our project was
+                                            remarkable. They turned our vision into something beyond what we imagined."
+                                        </p>
+                                        <div class="client-info">
+                                            <img src="https://images.unsplash.com/photo-1494790108755-2616b612b2fb?w=150&h=150&fit=crop&crop=face"
+                                                alt="Sarah Mitchell" class="client-avatar">
+                                            <div class="client-details">
+                                                <h4>Sarah Mitchell</h4>
+                                                <p>Creative Director, DesignLab</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="progress-bar" style="width: 0%"></div>
+                        </div>
+                        <div class="slide">
+                            <div class="slide-content">
+                                <div class="left-content">
+                                    <div class="slide-number">03 — EXCELLENCE</div>
+                                    <h2 class="slide-title">Precision in Every Detail</h2>
+                                    <p class="slide-description">
+                                        From concept to completion, we ensure every element reflects our unwavering
+                                        commitment to quality and innovation.
+                                    </p>
+                                    <button class="cta-button">
+                                        <i class="fas fa-gem"></i> View Portfolio
+                                    </button>
+                                </div>
+                                <div class="testimonial-card">
+                                    <div class="card-inner">
+                                        <div class="quote-icon">
+                                            <i class="fas fa-quote-right"></i>
+                                        </div>
+                                        <div class="rating">
+                                            <i class="fas fa-star star" style="--i: 0"></i>
+                                            <i class="fas fa-star star" style="--i: 1"></i>
+                                            <i class="fas fa-star star" style="--i: 2"></i>
+                                            <i class="fas fa-star star" style="--i: 3"></i>
+                                            <i class="fas fa-star star" style="--i: 4"></i>
+                                        </div>
+                                        <p class="testimonial-text">
+                                            "The attention to detail and seamless execution was extraordinary. Every
+                                            aspect of our project was handled with precision and care."
+                                        </p>
+                                        <div class="client-info">
+                                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face"
+                                                alt="David Chen" class="client-avatar">
+                                            <div class="client-details">
+                                                <h4>David Chen</h4>
+                                                <p>Founder, InnovateCorp</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="progress-bar" style="width: 0%"></div>
+                        </div>
+                        <div class="slide">
+                            <div class="slide-content">
+                                <div class="left-content">
+                                    <div class="slide-number">04 — IMPACT</div>
+                                    <h2 class="slide-title">Results That Speak Volumes</h2>
+                                    <p class="slide-description">
+                                        We measure success by the positive impact our solutions create for businesses
+                                        and the communities they serve.
+                                    </p>
+                                    <button class="cta-button">
+                                        <i class="fas fa-chart-line"></i> See Results
+                                    </button>
+                                </div>
+                                <div class="testimonial-card">
+                                    <div class="card-inner">
+                                        <div class="quote-icon">
+                                            <i class="fas fa-quote-right"></i>
+                                        </div>
+                                        <div class="rating">
+                                            <i class="fas fa-star star" style="--i: 0"></i>
+                                            <i class="fas fa-star star" style="--i: 1"></i>
+                                            <i class="fas fa-star star" style="--i: 2"></i>
+                                            <i class="fas fa-star star" style="--i: 3"></i>
+                                            <i class="fas fa-star star" style="--i: 4"></i>
+                                        </div>
+                                        <p class="testimonial-text">
+                                            "The results exceeded our expectations in every way. Our engagement
+                                            increased by 300% and customer satisfaction reached new heights."
+                                        </p>
+                                        <div class="client-info">
+                                            <img src="https://images.unsplash.com/photo-1507591064344-4c6ce005b128?w=150&h=150&fit=crop&crop=face"
+                                                alt="Maria Rodriguez" class="client-avatar">
+                                            <div class="client-details">
+                                                <h4>Maria Rodriguez</h4>
+                                                <p>Marketing Director, GrowthPro</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="progress-bar" style="width: 0%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="navigation" id="navigation">
+                    <div class="nav-dot active" data-slide="0"></div>
+                    <div class="nav-dot" data-slide="1"></div>
+                    <div class="nav-dot" data-slide="2"></div>
+                    <div class="nav-dot" data-slide="3"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- silder 2 -->
+        <div class="con1">
+            <div>
+                <h1 style=" font-family: 'Montserrat', sans-serif;font-size: 2.5rem;font-weight: 700;">
+                    Our Partners – Powering Our Work</h1>
+                <p class="intro-text ">From advanced design platforms to cutting-edge development tools, we partner with
+                    the
+                    best technologies in the industry to bring your vision to life.</p>
+            </div>
+
+            <div class="brands-section">
+                <div class="brands-rate">
+                    25,000,000+ <span>USERS</span>
+                </div>
+                <div class="divider"></div>
+
+                <div class="scroll-container">
+                    <div class="brands-track" style="gap: 600px;">
+                        <div class="brands-images">
+                            <img src="https://www.animaker.com/Animaker-Home/new-assets/Truist.svg" alt="Truist">
+                            <img src="https://www.animaker.com/Animaker-Home/new-assets/Amazon.svg" alt="Amazon">
+                            <img src="https://www.animaker.com/Animaker-Home/new-assets/Bosch.svg" alt="Bosch">
+                            <img src="https://www.animaker.com/Animaker-Home/new-assets/Visa.svg" alt="Visa">
+                            <img src="https://www.animaker.com/Animaker-Home/new-assets/Gsk.svg" alt="Gsk">
+                            <img src="https://www.animaker.com/Animaker-Home/new-assets/McDonalds.svg" alt="McDonalds">
+                            <img src="https://www.animaker.com/Animaker-Home/new-assets/United HealthCare.svg"
+                                alt="United HealthCare">
+                            <img src="https://www.animaker.com/Animaker-Home/new-assets/Aptiv.svg" alt="Aptiv">
+                        </div>
+                        <div class="brands-images">
+                            <img src="https://www.animaker.com/Animaker-Home/new-assets/Truist.svg" alt="Truist">
+                            <img src="https://www.animaker.com/Animaker-Home/new-assets/Amazon.svg" alt="Amazon">
+                            <img src="https://www.animaker.com/Animaker-Home/new-assets/Bosch.svg" alt="Bosch">
+                            <img src="https://www.animaker.com/Animaker-Home/new-assets/Visa.svg" alt="Visa">
+                            <img src="https://www.animaker.com/Animaker-Home/new-assets/Gsk.svg" alt="Gsk">
+                            <img src="https://www.animaker.com/Animaker-Home/new-assets/McDonalds.svg" alt="McDonalds">
+                            <img src="https://www.animaker.com/Animaker-Home/new-assets/United HealthCare.svg"
+                                alt="United HealthCare">
+                            <img src="https://www.animaker.com/Animaker-Home/new-assets/Aptiv.svg" alt="Aptiv">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+
+    <div id="footer-container"></div>
+
+    <!-- mega menu ki js  -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const megaMenuButton = document.getElementById('mega-menu-button-desktop');
+            const megaMenuDropdown = document.getElementById('mega-menu-dropdown');
+            const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+            const mobileMenu = document.getElementById('mega-menu-full-image');
+
+            if (megaMenuButton) {
+                let timeoutId = null;
+
+                const showMegaMenu = () => {
+                    clearTimeout(timeoutId);
+                    megaMenuButton.setAttribute('aria-expanded', 'true');
+                    megaMenuDropdown.classList.remove('opacity-0', 'invisible', '-translate-y-2');
+                    megaMenuDropdown.classList.add('opacity-100', 'visible', 'translate-y-0');
+                };
+
+                const hideMegaMenu = () => {
+                    timeoutId = setTimeout(() => {
+                        megaMenuButton.setAttribute('aria-expanded', 'false');
+                        megaMenuDropdown.classList.remove('opacity-100', 'visible', 'translate-y-0');
+                        megaMenuDropdown.classList.add('opacity-0', 'invisible', '-translate-y-2');
+                    }, 100);
+                };
+
+                megaMenuButton.addEventListener('mouseenter', showMegaMenu);
+                megaMenuButton.addEventListener('mouseleave', hideMegaMenu);
+
+                megaMenuDropdown.addEventListener('mouseenter', showMegaMenu);
+                megaMenuDropdown.addEventListener('mouseleave', hideMegaMenu);
+            }
+
+            if (mobileMenuToggle) {
+                mobileMenuToggle.addEventListener('click', () => {
+                    const isExpanded = mobileMenuToggle.getAttribute('aria-expanded') === 'true';
+                    mobileMenuToggle.setAttribute('aria-expanded', !isExpanded);
+                    mobileMenu.classList.toggle('hidden');
+                    mobileMenu.classList.toggle('flex');
+                });
+            }
+        });
+    </script>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

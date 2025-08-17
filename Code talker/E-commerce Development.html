@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fixed Flowbite Mega Menu</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Google Fonts (Poppins) -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Montserrat:wght@700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Montserrat:wght@300;400&display=swap');
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .Web-Development {
+            /* Replaced var() with static values */
+            color: #333;
+            /* Assuming --text-color is #333 */
+            background-color: #f0f0f0;
+            /* Assuming --bg-color is a light gray */
+            background-image: url('/images/parrot1.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 60vh;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 700px;
+            padding: 50px;
+            border-radius: 20px;
+            /* Replaced var() with static value for a light glass effect */
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(15px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            animation: fadeIn 1.5s ease-in-out forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .main-heading {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 4rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            line-height: 1.2;
+            /* Replaced var() with static value */
+            color: #333;
+        }
+
+        .sub-heading {
+            font-size: 1.2rem;
+            font-weight: 300;
+            line-height: 1.6;
+            margin-bottom: 40px;
+        }
+
+        .divider {
+            width: 80px;
+            height: 2px;
+            /* Replaced var() with a static color */
+            background-color: #ff5722;
+            /* A common highlight color */
+            margin: 0 auto 40px;
+            animation: slideIn 1.5s ease-in-out forwards;
+        }
+
+        @keyframes slideIn {
+            from {
+                width: 0;
+            }
+
+            to {
+                width: 80px;
+            }
+        }
+
+
+        /* Mobile adjustments */
+        @media (max-width: 768px) {
+            .container {
+                padding: 30px;
+            }
+
+            .main-heading {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+
+     <style>
+        html,
+        body {
+            height: 100%;
+        }
+
+        .section1 {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #0a011ad8, #12032bde);
+            color: #e6e6fa;
+            margin: 0;
+            padding: 40px;
+            overflow-x: hidden;
+        }
+
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .particle {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 50%;
+            animation: floatUp 10s linear infinite;
+            will-change: transform, opacity;
+        }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateY(100vh) scale(0.5);
+                opacity: 0;
+            }
+
+            50% {
+                opacity: 0.6;
+            }
+
+            100% {
+                transform: translateY(-10vh) scale(1);
+                opacity: 0;
+            }
+        }
+
+        .main-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 120px;
+            position: relative;
+            z-index: 1;
+            padding: 20px 0;
+        }
+
+        .design-section {
+            background: rgba(255, 255, 255, 0.05);
+            -webkit-backdrop-filter: blur(25px);
+            backdrop-filter: blur(25px);
+            padding: 80px 60px;
+            border-radius: 30px;
+            box-shadow: 0 0 50px rgba(224, 47, 107, 0.3);
+            max-width: 1200px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            transform-style: preserve-3d;
+            perspective: 1000px;
+            margin: 0 20px;
+            width: 100%;
+            will-change: transform;
+        }
+
+        .design-section::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 30px;
+            padding: 2px;
+            background: linear-gradient(90deg, #e02f6b, #f47b2c, #fffb00, #00ffe0, #e02f6b);
+            background-size: 400% 400%;
+            animation: borderGlow 12s linear infinite;
+
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask-composite: exclude;
+
+            pointer-events: none;
+        }
+
+
+        @keyframes borderGlow {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .content-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 60px;
+        }
+
+        .design-text {
+            text-align: center;
+            max-width: 700px;
+        }
+
+        .design-text h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 4rem;
+            font-weight: 700;
+            background: linear-gradient(45deg, #e02f6b, #f47b2c, #fffb00);
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            text-shadow: 0 0 20px rgba(255, 0, 150, 0.5);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .design-text h2::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -75%;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.7), transparent);
+            animation: shine 4s infinite;
+        }
+
+        @keyframes shine {
+            0% {
+                left: -75%;
+            }
+
+            100% {
+                left: 125%;
+            }
+        }
+
+        .design-text p {
+            font-size: 1.1rem;
+            color: #e6e6fa;
+            line-height: 1.8;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+
+        .btn-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 18px 40px;
+            border-radius: 50px;
+            background: linear-gradient(270deg, #e02f6b, #f47b2c, #e02f6b);
+            background-size: 400% 400%;
+            color: #fff;
+            font-weight: 600;
+            text-decoration: none;
+            border: none;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            box-shadow: 0 10px 30px rgba(224, 47, 107, 0.6);
+            animation: gradientFlow 5s infinite linear;
+            outline: none;
+        }
+
+        @keyframes gradientFlow {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            100% {
+                background-position: 200% 50%;
+            }
+        }
+
+        .btn-cta:hover {
+            transform: translateY(-3px) scale(1.04);
+            box-shadow: 0 15px 40px rgba(224, 47, 107, 0.8);
+        }
+
+        .btn-cta:focus-visible {
+            box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.7), 0 10px 30px rgba(224, 47, 107, 0.6);
+        }
+
+        .design-image-wrapper {
+            width: 650px;
+            height: 365px;
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+            transform: perspective(1000px) rotateY(6deg) rotateX(4deg);
+            position: relative;
+            will-change: transform, opacity;
+        }
+
+        .design-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .design-image-wrapper::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -50%;
+            width: 200%;
+            height: 100%;
+            background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+            animation: videoShine 6s infinite;
+            pointer-events: none;
+        }
+
+        @keyframes videoShine {
+            0% {
+                left: -50%;
+            }
+
+            100% {
+                left: 100%;
+            }
+        }
+
+        @media (min-width: 769px) {
+            .content-wrapper {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                gap: 80px;
+            }
+
+            .content-wrapper:nth-child(even) {
+                flex-direction: row-reverse;
+            }
+
+            .design-text {
+                text-align: left;
+                flex: 1;
+            }
+
+            .design-image-wrapper {
+                width: 50%;
+                max-width: 650px;
+                height: auto;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .design-section {
+                padding: 50px 30px;
+                gap: 40px;
+            }
+
+            .design-text h2 {
+                font-size: 2.5rem;
+            }
+
+            .design-text p {
+                font-size: 1rem;
+            }
+
+            .design-image-wrapper {
+                transform: none;
+                width: 100%;
+                height: auto;
+            }
+
+            body {
+                padding: 24px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation: none !important;
+                transition: none !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+     <header>
+
+        <!-- top -->
+        <div
+            class="flex flex-col md:flex-row justify-around items-center bg-white gap-4 p-4 shadow-[0_1px_5px_rgba(0,0,0,0.15)] w-full">
+            <div class="text-sm md:text-base">
+                <a href="mailto:info@codetalkerinnov.com" class="text-gray-700 hover:text-blue-600 transition-colors">
+                    info@codetalkerinnov.com
+                </a>
+            </div>
+
+            <!-- Social Icons -->
+            <div class="flex flex-col md:flex-row items-center gap-2 md:gap-4">
+                <span class="hidden md:inline-block text-gray-600 font-medium">Follow us</span>
+
+                <div class="flex gap-3">
+                    <!-- Facebook -->
+                    <a href="https://www.facebook.com/yourpage" target="_blank" aria-label="Facebook"
+                        class="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center hover:-translate-y-1 transition-transform">
+                        <i style="list-style: none;" class="fab fa-facebook-f text-sm"></i>
+                    </a>
+
+                    <!-- LinkedIn -->
+                    <a href="https://www.linkedin.com/in/yourprofile" target="_blank" aria-label="LinkedIn"
+                        class="w-8 h-8 rounded-full bg-blue-700 text-white flex items-center justify-center hover:-translate-y-1 transition-transform">
+                        <i style="list-style: none;" class="fab fa-linkedin-in text-sm"></i>
+                    </a>
+
+                    <!-- WhatsApp -->
+                    <a href="https://wa.me/92300XXXXXXX" target="_blank" aria-label="WhatsApp"
+                        class="w-8 h-8 rounded-full bg-green-500 text-white flex items-center justify-center hover:-translate-y-1 transition-transform">
+                        <i style="list-style: none;" class="fab fa-whatsapp text-sm"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <nav class="sticky top-0 z-50">
+            <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl p-4">
+                <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
+                    <img src="https://codetalkerinnov.com/wp-content/uploads/2020/12/CTI-Logo_1.png" class="h-10"
+                        alt=" " />
+
+                </a>
+
+                <button id="mobile-menu-toggle" type="button"
+                    class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-200"
+                    aria-controls="mega-menu-full-image" aria-expanded="false" aria-label="Toggle main menu">
+                    <span class="sr-only">Open main menu</span>
+                    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 17 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M1 1h15M1 7h15M1 13h15" />
+                    </svg>
+                </button>
+
+                <div id="mega-menu-full-image" class="hidden w-full md:flex md:w-auto md:order-1 items-center">
+                    <ul
+                        class="flex flex-col md:flex-row md:space-x-8 rtl:space-x-reverse font-medium mt-4 md:mt-0 items-center">
+                        <li class="relative">
+                            <a href="index.html"
+                                class="block py-2 px-3 text-gray-900 hover:text-blue-600 transition-colors duration-200 peer"
+                                aria-current="page">Home</a>
+                            <div
+                                class="absolute bottom-0 left-0 w-full h-[2px] bg-blue-600 transition-transform duration-300 transform scale-x-0 peer-hover:scale-x-100">
+                            </div>
+                        </li>
+                        <li class="relative">
+                            <button id="mega-menu-button-desktop"
+                                class="flex items-center justify-between w-full py-2 px-3 text-gray-900 hover:text-blue-600 transition-colors duration-200 md:w-auto peer"
+                                aria-expanded="false" aria-controls="mega-menu-dropdown">
+                                Services
+
+                                <svg class="w-2.5 h-2.5 ms-3 transition-transform duration-300 transform peer-aria-expanded:rotate-180"
+                                    aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                    viewBox="0 0 10 6">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2" d="m1 1 4 4 4-4" />
+                                </svg>
+                            </button>
+                            <div
+                                class="absolute bottom-0 left-0 w-full h-[2px] bg-blue-600 transition-transform duration-300 transform scale-x-0 peer-hover:scale-x-100">
+                            </div>
+                        </li>
+                        <li class="relative">
+                            <a href="about.html"
+                                class="block py-2 px-3 text-gray-900 hover:text-blue-600 transition-colors duration-200 peer">
+                                About Us</a>
+                            <div
+                                class="absolute bottom-0 left-0 w-full h-[2px] bg-blue-600 transition-transform duration-300 transform scale-x-0 peer-hover:scale-x-100">
+                            </div>
+                        </li>
+                        <li class="relative">
+                            <a href="portfolio.html"
+                                class="block py-2 px-3 text-gray-900 hover:text-blue-600 transition-colors duration-200 peer">Portfolio</a>
+                            <div
+                                class="absolute bottom-0 left-0 w-full h-[2px] bg-blue-600 transition-transform duration-300 transform scale-x-0 peer-hover:scale-x-100">
+                            </div>
+                        </li>
+                        <li class="relative">
+                            <a href="contact.html"
+                                class="block py-2 px-3 text-gray-900 hover:text-blue-600 transition-colors duration-200 peer">Contact</a>
+                            <div
+                                class="absolute bottom-0 left-0 w-full h-[2px] bg-blue-600 transition-transform duration-300 transform scale-x-0 peer-hover:scale-x-100">
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="mega-menu-dropdown"
+                class="absolute top-full left-0 right-0 bg-white border-t border-gray-200 shadow-md transform -translate-y-2 opacity-0 invisible transition-all duration-300">
+                <div class="container mx-auto px-4 py-8">
+                    <div class="grid grid-cols-1 md:grid-cols-4 gap text-sm text-gray-700">
+                        <ul class="space-y-3">
+                            <li class="font-bold text-gray-900 mb-2">Our Expertise</li>
+                            <li><a href="Web-Development.html"
+                                    class="hover:text-blue-600 transition-colors duration-200">Web Development</a>
+                            </li>
+                            <li><a href="Mobile App Development.html"
+                                    class="hover:text-blue-600 transition-colors duration-200">Mobile App
+                                    Development</a>
+                            </li>
+                            <li><a href="Graphing Designing.html"
+                                    class="hover:text-blue-600 transition-colors duration-200">Graphing Designing</a>
+                            </li>
+
+                            <li><a href="WordPress Development.html"
+                                    class="hover:text-blue-600 transition-colors duration-200">WordPress Development</a>
+                            </li>
+                        </ul>
+                        <ul class="space-y-3">
+                            <li class="font-bold text-gray-900 mb-2">Business Tools</li>
+                            <li><a href="Shopify Development.html"
+                                    class="hover:text-blue-600 transition-colors duration-200"> Shopify Development</a>
+                            </li>
+                            <li><a href="Software As A Service (SaaS).html"
+                                    class="hover:text-blue-600 transition-colors duration-200">Software As A Service
+                                    (SaaS)</a>
+                            </li>
+                            <li><a href="E-commerce Development.html"
+                                    class="hover:text-blue-600 transition-colors duration-200"> E-commerce
+                                    Development</a>
+                            </li>
+                            <li><a href="Support and maintenance.html"
+                                    class="hover:text-blue-600 transition-colors duration-200"> Support and
+                                    maintenance</a>
+                            </li>
+                        </ul>
+                        <ul class="space-y-3">
+                            <li class="font-bold text-gray-900 mb-2">Company</li>
+                            <li><a href="blog.html" class="hover:text-blue-600 transition-colors duration-200">Our
+                                    Blog</a></li>
+                            <li><a href="about.html" class="hover:text-blue-600 transition-colors duration-200">
+                                    Overview</a></li>
+                            <li><a href="portfolio.html" class="hover:text-blue-600 transition-colors duration-200">Our
+                                    Work</a></li>
+                            <li><a href="contact.html" class="hover:text-blue-600 transition-colors duration-200">Reach Us</a></li>
+                        </ul>
+                        <a href="#"
+                            class="mega-menu-image-card p-6 bg-center text-white bg-cover bg-no-repeat rounded-lg hover:  transition-all duration-300 transform hover:scale-105"
+                            style="background-image: url('/images/butterfly1.jpeg'); background-color: rgba(0, 0, 0, 0.5);   background-blend-mode: darken;">
+                            <p class="mb-5 text-lg font-bold leading-tight drop-shadow-md">
+                                Preview the new Flowbite dashboard navigation.
+                            </p>
+                            <button type="button"
+                                class="inline-flex items-center px-4 py-2 text-sm font-semibold text-white border-2 border-white rounded-full hover:bg-white hover:text-black focus:ring-4 focus:outline-none focus:ring-blue-300 transition-colors duration-200">
+                                Get started
+                                <svg class="w-4 h-4 ms-2 rtl:rotate-180" aria-hidden="true"
+                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
+                                </svg>
+                            </button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+    </header>
+
+    <div class="Web-Development ">
+
+        <div class="container">
+            <h1 class="main-heading text-white">E-commerce Development </h1>
+            <div class="divider"></div>
+            
+
+
+        </div>
+    </div>
+
+    <section class="section1">
+
+        <div class="particles" aria-hidden="true">
+            <div class="particle" style="left:10%; animation-duration: 9s; width: 8px; height: 8px;"></div>
+            <div class="particle" style="left:30%; animation-duration: 12s;"></div>
+            <div class="particle" style="left:50%; animation-duration: 15s; width: 10px; height: 10px;"></div>
+            <div class="particle" style="left:70%; animation-duration: 10s;"></div>
+            <div class="particle" style="left:90%; animation-duration: 14s; width: 7px; height: 7px;"></div>
+        </div>
+
+        <div class="main-container">
+            <section class="design-section" tabindex="0">
+                <div class="content-wrapper">
+                    <div class="design-text">
+                        <h2><i class="fa-solid fa-swatchbook" aria-hidden="true"></i> <span
+                                aria-label="Design and Prototyping">Shopify Store Development</span></h2>
+                        <p>Codetalkerinnovation with expert developers brings forward a responsive and amazing Shopify website, designed with all needed functionality. Shopify is your desired eCommerce platform to start your online store in one go. we have delivered tangible, real-world results, and value to our customers.</p>
+
+                        <a href="#" class="btn-cta" aria-label="Explore our work">Explore Our Work <i
+                                class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+                    </div>
+                    <div class="design-image-wrapper">
+                        <img loading="lazy" decoding="async" fetchpriority="low"
+                            src="https://codetalkerinnov.com/wp-content/uploads/2022/12/shopify-devl-img.png"
+                            alt="Futuristic dashboard mockup" class="design-image" />
+                    </div>
+                </div>
+            </section>
+
+
+        </div>
+    </section>
+
+
+
+
+
+    <div id="footer-container"></div>
+
+    <!-- mega menu ki js  -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const megaMenuButton = document.getElementById('mega-menu-button-desktop');
+            const megaMenuDropdown = document.getElementById('mega-menu-dropdown');
+            const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+            const mobileMenu = document.getElementById('mega-menu-full-image');
+
+            if (megaMenuButton) {
+                let timeoutId = null;
+
+                const showMegaMenu = () => {
+                    clearTimeout(timeoutId);
+                    megaMenuButton.setAttribute('aria-expanded', 'true');
+                    megaMenuDropdown.classList.remove('opacity-0', 'invisible', '-translate-y-2');
+                    megaMenuDropdown.classList.add('opacity-100', 'visible', 'translate-y-0');
+                };
+
+                const hideMegaMenu = () => {
+                    timeoutId = setTimeout(() => {
+                        megaMenuButton.setAttribute('aria-expanded', 'false');
+                        megaMenuDropdown.classList.remove('opacity-100', 'visible', 'translate-y-0');
+                        megaMenuDropdown.classList.add('opacity-0', 'invisible', '-translate-y-2');
+                    }, 100);
+                };
+
+                megaMenuButton.addEventListener('mouseenter', showMegaMenu);
+                megaMenuButton.addEventListener('mouseleave', hideMegaMenu);
+
+                megaMenuDropdown.addEventListener('mouseenter', showMegaMenu);
+                megaMenuDropdown.addEventListener('mouseleave', hideMegaMenu);
+            }
+
+            if (mobileMenuToggle) {
+                mobileMenuToggle.addEventListener('click', () => {
+                    const isExpanded = mobileMenuToggle.getAttribute('aria-expanded') === 'true';
+                    mobileMenuToggle.setAttribute('aria-expanded', !isExpanded);
+                    mobileMenu.classList.toggle('hidden');
+                    mobileMenu.classList.toggle('flex');
+                });
+            }
+        });
+
+    </script>
+    <!-- animation ki js  -->
+
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('.design-section');
+            sections.forEach((section) => {
+                const tl = gsap.timeline({
+                    scrollTrigger: { trigger: section, start: 'top 80%', toggleActions: 'play none none none' }
+                });
+                tl.from(section.querySelector('.design-text'), { x: -80, opacity: 0, duration: 1, ease: 'power3.out' });
+                tl.from(section.querySelector('.design-image-wrapper'), { rotationY: 45, rotationX: 10, scale: 0.7, opacity: 0, duration: 1.4, ease: 'elastic.out(1, 0.5)' }, '-=0.6');
+            });
+
+            const tilt = (el, x, y) => {
+                const rect = el.getBoundingClientRect();
+                const relX = (x - rect.left) / rect.width - 0.5;
+                const relY = (y - rect.top) / rect.height - 0.5;
+                gsap.to(el, { rotateY: relX * 8, rotateX: -relY * 6, duration: 0.3, ease: 'power2.out' });
+            };
+            document.querySelectorAll('.design-section').forEach((card) => {
+                card.addEventListener('mousemove', (e) => tilt(card, e.clientX, e.clientY));
+                card.addEventListener('mouseleave', () => gsap.to(card, { rotateX: 0, rotateY: 0, duration: 0.4, ease: 'power2.out' }));
+                card.addEventListener('focus', () => gsap.to(card, { scale: 1.01, duration: 0.2 }));
+                card.addEventListener('blur', () => gsap.to(card, { scale: 1, duration: 0.2 }));
+            });
+        });
+    </script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>

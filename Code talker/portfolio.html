@@ -1,0 +1,369 @@
+ 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fixed Flowbite Mega Menu</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Google Fonts (Poppins) -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Montserrat:wght@300;400&display=swap');
+
+
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+
+            box-sizing: border-box;
+        }
+
+        .portfolio {
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            background-image: url('/images/parrot1.jpg');
+             background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 60vh;
+            text-align: center;
+        }
+
+        .container {
+
+            max-width: 700px;
+            padding: 50px;
+            border-radius: 20px;
+            background: var(--glass-bg);
+            backdrop-filter: blur(15px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            animation: fadeIn 1.5s ease-in-out forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .main-heading {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 4rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            line-height: 1.2;
+            color: var(--text-color);
+        }
+
+        .sub-heading {
+            font-size: 1.2rem;
+            font-weight: 300;
+            line-height: 1.6;
+            margin-bottom: 40px;
+        }
+
+        .divider {
+            width: 80px;
+            height: 2px;
+            background-color: var(--highlight-color);
+            margin: 0 auto 40px;
+            animation: slideIn 1.5s ease-in-out forwards;
+        }
+
+        @keyframes slideIn {
+            from {
+                width: 0;
+            }
+
+            to {
+                width: 80px;
+            }
+        }
+
+ 
+        /* Mobile adjustments */
+        @media (max-width: 768px) {
+            .container {
+                padding: 30px;
+            }
+
+            .main-heading {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    
+  <header>
+
+        <!-- top -->
+        <div
+            class="flex flex-col md:flex-row justify-around items-center bg-white gap-4 p-4 shadow-[0_1px_5px_rgba(0,0,0,0.15)] w-full">
+            <div class="text-sm md:text-base">
+                <a href="mailto:info@codetalkerinnov.com" class="text-gray-700 hover:text-blue-600 transition-colors">
+                    info@codetalkerinnov.com
+                </a>
+            </div>
+
+            <!-- Social Icons -->
+            <div class="flex flex-col md:flex-row items-center gap-2 md:gap-4">
+                <span class="hidden md:inline-block text-gray-600 font-medium">Follow us</span>
+
+                <div class="flex gap-3">
+                    <!-- Facebook -->
+                    <a href="https://www.facebook.com/yourpage" target="_blank" aria-label="Facebook"
+                        class="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center hover:-translate-y-1 transition-transform">
+                        <i style="list-style: none;" class="fab fa-facebook-f text-sm"></i>
+                    </a>
+
+                    <!-- LinkedIn -->
+                    <a href="https://www.linkedin.com/in/yourprofile" target="_blank" aria-label="LinkedIn"
+                        class="w-8 h-8 rounded-full bg-blue-700 text-white flex items-center justify-center hover:-translate-y-1 transition-transform">
+                        <i style="list-style: none;" class="fab fa-linkedin-in text-sm"></i>
+                    </a>
+
+                    <!-- WhatsApp -->
+                    <a href="https://wa.me/92300XXXXXXX" target="_blank" aria-label="WhatsApp"
+                        class="w-8 h-8 rounded-full bg-green-500 text-white flex items-center justify-center hover:-translate-y-1 transition-transform">
+                        <i style="list-style: none;" class="fab fa-whatsapp text-sm"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <nav class="sticky top-0 z-50">
+            <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl p-4">
+                <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
+                    <img src="https://codetalkerinnov.com/wp-content/uploads/2020/12/CTI-Logo_1.png" class="h-10"
+                        alt=" " />
+
+                </a>
+
+                <button id="mobile-menu-toggle" type="button"
+                    class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-200"
+                    aria-controls="mega-menu-full-image" aria-expanded="false" aria-label="Toggle main menu">
+                    <span class="sr-only">Open main menu</span>
+                    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 17 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M1 1h15M1 7h15M1 13h15" />
+                    </svg>
+                </button>
+
+                <div id="mega-menu-full-image" class="hidden w-full md:flex md:w-auto md:order-1 items-center">
+                    <ul
+                        class="flex flex-col md:flex-row md:space-x-8 rtl:space-x-reverse font-medium mt-4 md:mt-0 items-center">
+                        <li class="relative">
+                            <a href="index.html"
+                                class="block py-2 px-3 text-gray-900 hover:text-blue-600 transition-colors duration-200 peer"
+                                aria-current="page">Home</a>
+                            <div
+                                class="absolute bottom-0 left-0 w-full h-[2px] bg-blue-600 transition-transform duration-300 transform scale-x-0 peer-hover:scale-x-100">
+                            </div>
+                        </li>
+                        <li class="relative">
+                            <button id="mega-menu-button-desktop"
+                                class="flex items-center justify-between w-full py-2 px-3 text-gray-900 hover:text-blue-600 transition-colors duration-200 md:w-auto peer"
+                                aria-expanded="false" aria-controls="mega-menu-dropdown">
+                                Services
+
+                                <svg class="w-2.5 h-2.5 ms-3 transition-transform duration-300 transform peer-aria-expanded:rotate-180"
+                                    aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                    viewBox="0 0 10 6">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2" d="m1 1 4 4 4-4" />
+                                </svg>
+                            </button>
+                            <div
+                                class="absolute bottom-0 left-0 w-full h-[2px] bg-blue-600 transition-transform duration-300 transform scale-x-0 peer-hover:scale-x-100">
+                            </div>
+                        </li>
+                        <li class="relative">
+                            <a href="about.html"
+                                class="block py-2 px-3 text-gray-900 hover:text-blue-600 transition-colors duration-200 peer">
+                                About Us</a>
+                            <div
+                                class="absolute bottom-0 left-0 w-full h-[2px] bg-blue-600 transition-transform duration-300 transform scale-x-0 peer-hover:scale-x-100">
+                            </div>
+                        </li>
+                        <li class="relative">
+                            <a href="portfolio.html"
+                                class="block py-2 px-3 text-gray-900 hover:text-blue-600 transition-colors duration-200 peer">Portfolio</a>
+                            <div
+                                class="absolute bottom-0 left-0 w-full h-[2px] bg-blue-600 transition-transform duration-300 transform scale-x-0 peer-hover:scale-x-100">
+                            </div>
+                        </li>
+                        <li class="relative">
+                            <a href="contact.html"
+                                class="block py-2 px-3 text-gray-900 hover:text-blue-600 transition-colors duration-200 peer">Contact</a>
+                            <div
+                                class="absolute bottom-0 left-0 w-full h-[2px] bg-blue-600 transition-transform duration-300 transform scale-x-0 peer-hover:scale-x-100">
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="mega-menu-dropdown"
+                class="absolute top-full left-0 right-0 bg-white border-t border-gray-200 shadow-md transform -translate-y-2 opacity-0 invisible transition-all duration-300">
+                <div class="container mx-auto px-4 py-8">
+                    <div class="grid grid-cols-1 md:grid-cols-4 gap text-sm text-gray-700">
+                        <ul class="space-y-3">
+                            <li class="font-bold text-gray-900 mb-2">Our Expertise</li>
+                            <li><a href="Web-Development.html"
+                                    class="hover:text-blue-600 transition-colors duration-200">Web Development</a>
+                            </li>
+                            <li><a href="Mobile App Development.html"
+                                    class="hover:text-blue-600 transition-colors duration-200">Mobile App
+                                    Development</a>
+                            </li>
+                            <li><a href="Graphing Designing.html"
+                                    class="hover:text-blue-600 transition-colors duration-200">Graphing Designing</a>
+                            </li>
+
+                            <li><a href="WordPress Development.html"
+                                    class="hover:text-blue-600 transition-colors duration-200">WordPress Development</a>
+                            </li>
+                        </ul>
+                        <ul class="space-y-3">
+                            <li class="font-bold text-gray-900 mb-2">Business Tools</li>
+                            <li><a href="Shopify Development.html"
+                                    class="hover:text-blue-600 transition-colors duration-200"> Shopify Development</a>
+                            </li>
+                            <li><a href="Software As A Service (SaaS).html"
+                                    class="hover:text-blue-600 transition-colors duration-200">Software As A Service
+                                    (SaaS)</a>
+                            </li>
+                            <li><a href="E-commerce Development.html"
+                                    class="hover:text-blue-600 transition-colors duration-200"> E-commerce
+                                    Development</a>
+                            </li>
+                            <li><a href="Support and maintenance.html"
+                                    class="hover:text-blue-600 transition-colors duration-200"> Support and
+                                    maintenance</a>
+                            </li>
+                        </ul>
+                        <ul class="space-y-3">
+                            <li class="font-bold text-gray-900 mb-2">Company</li>
+                            <li><a href="blog.html" class="hover:text-blue-600 transition-colors duration-200">Our
+                                    Blog</a></li>
+                            <li><a href="about.html" class="hover:text-blue-600 transition-colors duration-200">
+                                    Overview</a></li>
+                            <li><a href="portfolio.html" class="hover:text-blue-600 transition-colors duration-200">Our
+                                    Work</a></li>
+                            <li><a href="contact.html" class="hover:text-blue-600 transition-colors duration-200">Reach Us</a></li>
+                        </ul>
+                        <a href="#"
+                            class="mega-menu-image-card p-6 bg-center text-white bg-cover bg-no-repeat rounded-lg hover:  transition-all duration-300 transform hover:scale-105"
+                            style="background-image: url('/images/butterfly1.jpeg'); background-color: rgba(0, 0, 0, 0.5);   background-blend-mode: darken;">
+                            <p class="mb-5 text-lg font-bold leading-tight drop-shadow-md">
+                                Preview the new Flowbite dashboard navigation.
+                            </p>
+                            <button type="button"
+                                class="inline-flex items-center px-4 py-2 text-sm font-semibold text-white border-2 border-white rounded-full hover:bg-white hover:text-black focus:ring-4 focus:outline-none focus:ring-blue-300 transition-colors duration-200">
+                                Get started
+                                <svg class="w-4 h-4 ms-2 rtl:rotate-180" aria-hidden="true"
+                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
+                                </svg>
+                            </button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+    </header>
+     
+    <div class="portfolio ">
+
+        <div class="container">
+            <h1 class="main-heading text-white">Coming Soon</h1>
+            <div class="divider"></div>
+            <p class="sub-heading text-white">
+                My portfolio is undergoing a beautiful transformation. Get ready to explore a collection of my best work
+                and
+                creative projects.
+                <br>
+                I'm excited to launch it soon!
+            </p>
+
+      
+        </div>
+    </div>
+    <div id="footer-container"></div>
+
+    <!-- mega menu ki js  -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const megaMenuButton = document.getElementById('mega-menu-button-desktop');
+            const megaMenuDropdown = document.getElementById('mega-menu-dropdown');
+            const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+            const mobileMenu = document.getElementById('mega-menu-full-image');
+
+            if (megaMenuButton) {
+                let timeoutId = null;
+
+                const showMegaMenu = () => {
+                    clearTimeout(timeoutId);
+                    megaMenuButton.setAttribute('aria-expanded', 'true');
+                    megaMenuDropdown.classList.remove('opacity-0', 'invisible', '-translate-y-2');
+                    megaMenuDropdown.classList.add('opacity-100', 'visible', 'translate-y-0');
+                };
+
+                const hideMegaMenu = () => {
+                    timeoutId = setTimeout(() => {
+                        megaMenuButton.setAttribute('aria-expanded', 'false');
+                        megaMenuDropdown.classList.remove('opacity-100', 'visible', 'translate-y-0');
+                        megaMenuDropdown.classList.add('opacity-0', 'invisible', '-translate-y-2');
+                    }, 100);
+                };
+
+                megaMenuButton.addEventListener('mouseenter', showMegaMenu);
+                megaMenuButton.addEventListener('mouseleave', hideMegaMenu);
+
+                megaMenuDropdown.addEventListener('mouseenter', showMegaMenu);
+                megaMenuDropdown.addEventListener('mouseleave', hideMegaMenu);
+            }
+
+            if (mobileMenuToggle) {
+                mobileMenuToggle.addEventListener('click', () => {
+                    const isExpanded = mobileMenuToggle.getAttribute('aria-expanded') === 'true';
+                    mobileMenuToggle.setAttribute('aria-expanded', !isExpanded);
+                    mobileMenu.classList.toggle('hidden');
+                    mobileMenu.classList.toggle('flex');
+                });
+            }
+        });
+    </script>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
